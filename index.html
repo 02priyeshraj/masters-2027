@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Master's 2027 Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+html{color-scheme:light}
+body{margin:0}
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Layout: a sticky header with the application summary, then two views (deadline board, college dossiers) on a cool paper ground. */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --sunk:#eaeef2; --line:#d6dde4; --ink:#14202b; --ink-2:#4a5866; --ink-3:#6d7b88;
+  --accent:#0d6b63; --accent-ink:#ffffff; --accent-soft:#dcefec; --link:#0b5f8a;
+  --up:#2453b3; --up-soft:#e2e9f8; --hot:#b4361f; --hot-soft:#f8e3dd; --warm:#9a6200; --warm-soft:#f6ecd6;
+  --ok:#1d7a3e; --ok-soft:#dff1e5; --past:#6d7b88; --past-soft:#e7ebef;
+  --f-display:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif; --f-body:"Inter",ui-sans-serif,system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f151b; --surface:#16202a; --sunk:#1c2833; --line:#2a3846; --ink:#e7edf3; --ink-2:#aab7c4; --ink-3:#8494a3;
+  --accent:#4fc1b5; --accent-ink:#06201d; --accent-soft:#173b38; --link:#7cc4ee;
+  --up:#8fb0f5; --up-soft:#1d2b48; --hot:#f2896f; --hot-soft:#43231c; --warm:#e5b45c; --warm-soft:#3a2d14;
+  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --surface:#16202a; --sunk:#1c2833; --line:#2a3846; --ink:#e7edf3; --ink-2:#aab7c4; --ink-3:#8494a3;
+  --accent:#4fc1b5; --accent-ink:#06201d; --accent-soft:#173b38; --link:#7cc4ee;
+  --up:#8fb0f5; --up-soft:#1d2b48; --hot:#f2896f; --hot-soft:#43231c; --warm:#e5b45c; --warm-soft:#3a2d14;
+  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+a{color:var(--link);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.2}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding-block:12px}
+.brand{display:flex;flex-direction:column;gap:2px;min-width:0}
+.brand h1{font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
+.brand small{color:var(--ink-3);font-size:.78rem}
+nav.views{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:999px;margin-left:auto}
+nav.views a{font:600 .85rem var(--f-body);color:var(--ink-2);text-decoration:none;padding:6px 14px;border-radius:999px}
+nav.views a[aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .12)}
+
+.backup{display:flex;gap:6px}
+.backup button,.backup .btn{font:600 .8rem var(--f-body);padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+@media (max-width:560px){.backup{width:100%}.backup>*{flex:1;text-align:center}}
+/* summary */
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-block:18px 8px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.tile[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.tile .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:600}
+.tile .v{font:700 1.7rem/1.1 var(--f-display)}
+.tile.next .v{font-size:1rem;line-height:1.35}
+.tile.next{cursor:default}
+.tile .sub{font-size:.8rem;color:var(--ink-2)}
+@media (max-width:760px){.summary{grid-template-columns:repeat(3,minmax(0,1fr))}.tile.next{grid-column:1/-1;order:-1}}
+@media (max-width:560px){nav.views{margin-left:0;width:100%}nav.views a{flex:1;text-align:center}.tile{padding:10px}.tile .v{font-size:1.4rem}.tile .sub{font-size:.72rem}
+  .controls select{flex:1 1 140px}.count{margin-left:0;width:100%}}
+
+.banner{margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--warm-soft);color:var(--warm);font-size:.85rem}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:12px}
+.controls input,.controls select{font:inherit;font-size:.9rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
+.controls input{flex:1 1 200px}
+.count{color:var(--ink-3);font-size:.85rem;margin-left:auto}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 .72rem/1 var(--f-body);padding:5px 8px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.p-up{background:var(--up-soft);color:var(--up)} .p-hot{background:var(--hot-soft);color:var(--hot)} .p-warm{background:var(--warm-soft);color:var(--warm)}
+.p-ok{background:var(--ok-soft);color:var(--ok)} .p-past{background:var(--past-soft);color:var(--past)}
+.tag{font:600 .68rem/1 var(--f-mono);padding:4px 6px;border-radius:5px;background:var(--sunk);color:var(--ink-2);white-space:nowrap}
+
+/* deadline board */
+.month{margin-top:18px}
+.month h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);padding-bottom:6px;border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line)}
+.row.dim{opacity:.55}
+.date{display:flex;flex-direction:column;line-height:1.15}
+.date b{font:600 1.05rem var(--f-mono)}
+.date span{font-size:.72rem;color:var(--ink-3)}
+.what{min-width:0}
+.what .c{font-size:.8rem;color:var(--ink-2)}
+.what .c button{all:unset;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.what .n{font-weight:600}
+.what .n a{color:var(--ink);text-decoration-color:var(--line)}
+.what .n a:hover{text-decoration-color:currentColor}
+.what .dl{font-size:.8rem;color:var(--ink-3)}
+.side{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+select.status{font:600 .8rem var(--f-body);padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+@media (max-width:640px){.row{grid-template-columns:70px minmax(0,1fr)}.side{grid-column:2;justify-content:flex-start}}
+.empty{padding:28px 4px;color:var(--ink-3)}
+
+/* colleges */
+.continent{margin-top:26px}
+.continent>h2{font-size:1.5rem;font-weight:800}
+.country{margin-top:14px}
+.country>h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:10px}
+.college{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:16px;scroll-margin-top:90px}
+.college>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:center;padding:16px 18px}
+.college>summary::-webkit-details-marker{display:none}
+.college h3{font-size:1.25rem;font-weight:700}
+.college .city{color:var(--ink-3);font-size:.85rem}
+.ranks{display:flex;gap:6px}
+.rank{border:1px solid var(--line);border-radius:8px;padding:5px 9px;text-align:center;min-width:64px}
+.rank b{display:block;font:600 1.05rem var(--f-mono)}
+.rank span{font-size:.64rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.chev{transition:transform .15s;color:var(--ink-3)}
+.college[open] .chev{transform:rotate(90deg)}
+.cstat{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+@media (max-width:640px){.college>summary{grid-template-columns:1fr}.ranks{flex-wrap:wrap}}
+.body{padding:0 18px 18px;display:grid;gap:18px}
+.sec h4{font:700 .78rem var(--f-body);text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);margin:0 0 8px}
+.notes{background:var(--accent-soft);border-radius:8px;padding:10px 14px}
+.notes ul{margin:0;padding-left:18px}
+.notes li+li{margin-top:4px}
+ul.req{margin:0;padding-left:18px}
+ul.req li{margin:3px 0}
+.course{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px}
+.course+.course{margin-top:8px}
+.chead{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.chead .nm{font-weight:600;font-size:1rem;min-width:0;flex:1 1 260px}
+.dls{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--ink-2)}
+.dls .mono{color:var(--ink)}
+.dls .gone{text-decoration:line-through;color:var(--ink-3)}
+.mine{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.8rem;color:var(--ink-3)}
+.mine input,.mine textarea{font:inherit;font-size:.85rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);padding:5px 8px}
+.mine textarea{flex:1 1 260px;min-height:34px;resize:vertical}
+.saved{color:var(--ok)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:160px}
+thead th{background:var(--sunk);font-weight:600;font-size:.78rem}
+tbody tr:last-child td{border-bottom:0}
+td{font-variant-numeric:tabular-nums}
+.feelinks{display:flex;flex-wrap:wrap;gap:12px;font-size:.84rem;margin-top:8px}
+.foot{font-size:.78rem;color:var(--ink-3);margin-top:6px}
+footer.page{color:var(--ink-3);font-size:.78rem;padding-block:30px 40px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><h1>Master's 2027</h1><small id="meta">CS, Data Science &amp; AI · loading…</small></div>
+    <nav class="views" aria-label="Views">
+      <a href="#deadlines" data-view="deadlines">Deadlines</a>
+      <a href="#colleges" data-view="colleges">Colleges</a>
+    </nav>
+    <div class="backup"><button type="button" id="exp">Export tracker</button><label class="btn" for="imp">Import</label><input type="file" id="imp" accept="application/json,.json" hidden></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="summary" aria-label="Application summary">
+    <div class="tile next"><span class="k">Next deadline</span><span class="v" id="nextDl">Loading…</span><span class="sub" id="nextSub"></span></div>
+    <button class="tile" data-bucket="upcoming" aria-pressed="false"><span class="k">Upcoming</span><span class="v mono" id="nUp">–</span><span class="sub">deadline still ahead</span></button>
+    <button class="tile" data-bucket="applied" aria-pressed="false"><span class="k">Applied</span><span class="v mono" id="nAp">–</span><span class="sub">marked by you</span></button>
+    <button class="tile" data-bucket="passed" aria-pressed="false"><span class="k">Passed</span><span class="v mono" id="nPa">–</span><span class="sub">deadline gone, not applied</span></button>
+  </section>
+  <div id="storeNote" class="banner" hidden></div>
+
+  <section id="v-deadlines" aria-label="Deadlines">
+    <div class="controls">
+      <input id="q" type="search" placeholder="Search course or college" aria-label="Search">
+      <select id="fCountry" aria-label="Country"><option value="">All countries</option></select>
+      <select id="fBucket" aria-label="Status group"><option value="">All</option><option value="upcoming">Upcoming</option><option value="applied">Applied</option><option value="passed">Passed</option></select>
+      <span class="count" id="count"></span>
+    </div>
+    <div id="board"></div>
+  </section>
+
+  <section id="v-colleges" aria-label="Colleges" hidden>
+    <div id="dossiers"></div>
+  </section>
+
+  <footer class="page" id="srcnote"></footer>
+</main>
+
+<script>
+(function(){
+const STATUSES=["Not started","Preparing","Applied","Interview","Offer","Rejected","Not applying"];
+const APPLIED=new Set(["Applied","Interview","Offer","Rejected"]);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^https:\/\//.test(u)?u:"#";
+const A=(t,u,cls)=>`<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener noreferrer"${cls?` class="${cls}"`:""}>${esc(t)}</a>`;
+const DAY=86400000;
+const today=(()=>{const d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate())})();
+const parse=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+const fmt=(s,o)=>parse(s).toLocaleDateString("en-GB",o||{day:"numeric",month:"short",year:"numeric"});
+const daysTo=s=>Math.round((parse(s)-today)/DAY);
+
+let DATA=null, COURSES=[], TRACK={}, store=null, filterBucket="";
+
+function nextDeadline(c){const f=c.deadlines.filter(d=>daysTo(d.d)>=0).sort((a,b)=>a.d.localeCompare(b.d));return f[0]||null}
+function lastDeadline(c){const s=[...c.deadlines].sort((a,b)=>b.d.localeCompare(a.d));return s[0]||null}
+function statusOf(id){return (TRACK[id]&&TRACK[id].status)||"Not started"}
+function bucket(c){if(APPLIED.has(statusOf(c.id)))return "applied";return nextDeadline(c)?"upcoming":"passed"}
+function urgency(c){const n=nextDeadline(c);if(!n)return null;const d=daysTo(n.d);return d<=7?"hot":d<=30?"warm":"up"}
+function pillFor(c){
+  const st=statusOf(c.id),b=bucket(c);
+  if(b==="applied")return `<span class="pill p-ok">${esc(st)}</span>`;
+  if(b==="passed")return `<span class="pill p-past">${c.deadlines.length?"Deadline passed":"Not open"}</span>`;
+  const n=nextDeadline(c),d=daysTo(n.d),u=urgency(c);
+  const txt=d===0?"Closes today":d===1?"1 day left":`${d} days left`;
+  return `<span class="pill p-${u}">${txt}</span>`;
+}
+function statusSelect(c){
+  return `<select class="status" data-course="${esc(c.id)}" aria-label="My status for ${esc(c.name)}">${STATUSES.map(s=>`<option${s===statusOf(c.id)?" selected":""}>${s}</option>`).join("")}</select>`;
+}
+
+/* ---------- deadlines board ---------- */
+function renderBoard(){
+  const q=document.getElementById("q").value.trim().toLowerCase();
+  const fc=document.getElementById("fCountry").value, fb=document.getElementById("fBucket").value;
+  let list=COURSES.filter(c=>(!fc||c.college.country===fc)&&(!fb||bucket(c)===fb)&&(!q||(c.name+" "+c.college.name+" "+c.college.short).toLowerCase().includes(q)));
+  const keyDate=c=>{const n=nextDeadline(c);if(n)return n.d;const l=lastDeadline(c);return l?l.d:"9999-12-31"};
+  const order={upcoming:0,applied:1,passed:2};
+  list.sort((a,b)=>(order[bucket(a)]-order[bucket(b)])||keyDate(a).localeCompare(keyDate(b))||a.name.localeCompare(b.name));
+  document.getElementById("count").textContent=`${list.length} of ${COURSES.length} courses`;
+  if(!list.length){document.getElementById("board").innerHTML=`<p class="empty">No courses match. Clear the search or pick another filter.</p>`;return}
+  const groups=[];let cur=null;
+  for(const c of list){
+    const b=bucket(c);const kd=keyDate(c);
+    const label=b==="upcoming"?parse(kd).toLocaleDateString("en-GB",{month:"long",year:"numeric"}):b==="applied"?"Applied":"Passed or not open";
+    if(!cur||cur.label!==label){cur={label,items:[]};groups.push(cur)}
+    cur.items.push(c);
+  }
+  document.getElementById("board").innerHTML=groups.map(g=>`<div class="month"><h2>${esc(g.label)}</h2>${g.items.map(rowHtml).join("")}</div>`).join("");
+}
+function rowHtml(c){
+  const n=nextDeadline(c)||lastDeadline(c);
+  const dl=n?`<div class="date"><b>${esc(parse(n.d).toLocaleDateString("en-GB",{day:"2-digit",month:"short"}))}</b><span>${esc(parse(n.d).toLocaleDateString("en-GB",{weekday:"short",year:"numeric"}))}</span></div>`:`<div class="date"><b>—</b><span>no date</span></div>`;
+  const others=c.deadlines.map(d=>`${d.l}: ${fmt(d.d)}`).join(" · ");
+  return `<div class="row${statusOf(c.id)==="Not applying"?" dim":""}">${dl}
+    <div class="what"><div class="c"><button data-goto="${esc(c.college.id)}">${esc(c.college.short)}</button> · ${esc(c.college.country)} · <span class="tag">${esc(c.deg)}</span></div>
+      <div class="n">${A(c.name,c.url)}</div>${others?`<div class="dl">${esc(others)}</div>`:""}</div>
+    <div class="side">${pillFor(c)}${statusSelect(c)}</div></div>`;
+}
+
+/* ---------- college dossiers ---------- */
+function renderColleges(){
+  const out=[];
+  for(const cont of DATA.continents){
+    const cols=DATA.colleges.filter(c=>c.continent===cont);if(!cols.length)continue;
+    const countries=[...new Set(cols.map(c=>c.country))];
+    out.push(`<section class="continent"><h2>${esc(cont)}</h2>${countries.map(ct=>`<div class="country"><h3>${esc(ct)}</h3>${cols.filter(c=>c.country===ct).map(collegeHtml).join("")}</div>`).join("")}</section>`);
+  }
+  document.getElementById("dossiers").innerHTML=out.join("");
+}
+function collegeHtml(c){
+  const cs=COURSES.filter(x=>x.college===c);
+  const cnt=b=>cs.filter(x=>bucket(x)===b).length;
+  const r=c.rank;
+  const stat=[["upcoming","p-up","upcoming"],["applied","p-ok","applied"],["passed","p-past","passed"]].map(([b,cl,l])=>cnt(b)?`<span class="pill ${cl}">${cnt(b)} ${l}</span>`:"").join("");
+  return `<details class="college" id="c-${esc(c.id)}">
+  <summary><div><h3>${esc(c.name)}</h3><div class="city">${esc(c.city)}${c.route?` · <b>${esc(c.route)}</b>`:""}</div><div class="cstat">${stat}</div></div>
+    <div class="ranks"><div class="rank"><b>${esc(r.overall)}</b><span>QS overall</span></div><div class="rank"><b>${esc(r.dsai)}</b><span>DS &amp; AI</span></div><div class="rank"><b>${esc(r.cs)}</b><span>CS &amp; IS</span></div><span class="chev" aria-hidden="true">▸</span></div></summary>
+  <div class="body">
+    <div class="sec"><h4>Courses, deadlines &amp; requirements</h4>${cs.map(courseHtml).join("")}</div>
+    <div class="sec"><h4>Requirements for all courses</h4><ul class="req">${c.general.map(g=>`<li>${A(g.t,g.u)}</li>`).join("")}</ul></div>
+    <div class="sec"><h4>Fee structure</h4><div class="tablewrap"><table><thead><tr>${c.fees.cols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${c.fees.rows.map(row=>`<tr>${row.map(v=>`<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+      ${c.fees.links.length?`<div class="feelinks">${c.fees.links.map(l=>A(l.t,l.u)).join("")}</div>`:""}${c.fees.foot?`<div class="foot">${esc(c.fees.foot)}</div>`:""}</div>
+    <div class="sec notes"><h4>Notes for my 2027 application</h4><ul>${c.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>
+  </div></details>`;
+}
+function courseHtml(c){
+  const t=TRACK[c.id]||{};
+  const dls=c.deadlines.length?c.deadlines.map(d=>`<span class="${daysTo(d.d)<0?"gone":""}">${esc(d.l)}: <span class="mono">${esc(fmt(d.d))}</span></span>`).join(""):`<span>${esc(c.tag||"No deadline published")}</span>`;
+  return `<div class="course"><div class="chead"><div class="nm"><span class="tag">${esc(c.deg)}</span> ${A(c.name,c.url)}</div>${pillFor(c)}${statusSelect(c)}</div>
+    <div class="dls">${dls}</div>
+    <ul class="req">${c.req.map(q=>`<li>${A(q.t,q.u)}</li>`).join("")}</ul>
+    <div class="mine"><label for="ad-${esc(c.id)}">Applied on</label><input type="date" id="ad-${esc(c.id)}" data-applied="${esc(c.id)}" value="${esc(t.applied||"")}">
+      <textarea id="nt-${esc(c.id)}" data-note="${esc(c.id)}" placeholder="My note (portal ID, documents pending…)" aria-label="My note for ${esc(c.name)}">${esc(t.note||"")}</textarea><span class="saved" data-saved="${esc(c.id)}"></span></div></div>`;
+}
+
+/* ---------- summary ---------- */
+function renderSummary(){
+  const by=b=>COURSES.filter(c=>bucket(c)===b).length;
+  document.getElementById("nUp").textContent=by("upcoming");
+  document.getElementById("nAp").textContent=by("applied");
+  document.getElementById("nPa").textContent=by("passed");
+  const up=COURSES.filter(c=>bucket(c)==="upcoming"&&statusOf(c.id)!=="Not applying").map(c=>({c,n:nextDeadline(c)})).sort((a,b)=>a.n.d.localeCompare(b.n.d));
+  if(up.length){const {c,n}=up[0];const same=up.filter(x=>x.n.d===n.d&&x.c.college===c.college).length;
+    const d=daysTo(n.d);
+    document.getElementById("nextDl").textContent=`${c.college.short}, ${fmt(n.d,{day:"numeric",month:"short"})}`;
+    document.getElementById("nextSub").textContent=`${d===0?"today":d===1?"tomorrow":"in "+d+" days"} · ${same>1?same+" courses":c.name}`;
+  } else {document.getElementById("nextDl").textContent="Nothing upcoming";document.getElementById("nextSub").textContent=""}
+  document.querySelectorAll(".tile[data-bucket]").forEach(t=>t.setAttribute("aria-pressed",String(t.dataset.bucket===filterBucket)));
+}
+function renderAll(){renderSummary();renderBoard();renderColleges();}
+function rerenderKeepOpen(){
+  const open=[...document.querySelectorAll("details.college[open]")].map(d=>d.id);
+  const y=window.scrollY;renderAll();open.forEach(id=>{const e=document.getElementById(id);if(e)e.open=true});window.scrollTo(0,y);
+}
+
+/* ---------- storage ---------- */
+const LS="ms27-tracker";
+function lsLoad(){try{return JSON.parse(localStorage.getItem(LS)||"{}")}catch(e){return {}}}
+function lsSave(){try{localStorage.setItem(LS,JSON.stringify(TRACK))}catch(e){}}
+const pending={};
+async function save(id,patch){
+  TRACK[id]=Object.assign({},TRACK[id],patch,{updatedAt:new Date().toISOString()});
+  if(!store){lsSave();return true}
+  const prev=pending[id]||Promise.resolve();
+  const p=prev.then(()=>store.doc("tracker/"+id).set(TRACK[id])).then(()=>true,e=>{showNote("Could not save to your online tracker ("+(e&&e.code||"error")+"). Changes are kept on this device for now.");lsSave();return false});
+  pending[id]=p;return p;
+}
+function showNote(t){const n=document.getElementById("storeNote");n.textContent=t;n.hidden=false}
+
+function connect(){}
+function exportData(){const blob=new Blob([JSON.stringify({exported:new Date().toISOString(),tracker:TRACK},null,1)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="masters-2027-tracker-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function importData(file){const r=new FileReader();r.onload=()=>{try{const j=JSON.parse(r.result);const t=j.tracker||j;if(typeof t!=="object")throw 0;TRACK=Object.assign({},TRACK,t);lsSave();rerenderKeepOpen();showNote("Imported "+Object.keys(t).length+" tracker entries.")}catch(err){showNote("That file isn't a tracker backup. Choose a file saved with Export.")}};r.readAsText(file)}
+/* ---------- events ---------- */
+document.addEventListener("change",async e=>{
+  const s=e.target.closest("select.status");
+  if(s){const id=s.dataset.course;const patch={status:s.value};
+    if(APPLIED.has(s.value)&&!(TRACK[id]&&TRACK[id].applied)){patch.applied=today.toISOString().slice(0,10)}
+    save(id,patch);rerenderKeepOpen();return}
+  const d=e.target.closest("input[data-applied]");
+  if(d){await save(d.dataset.applied,{applied:d.value});flash(d.dataset.applied)}
+});
+document.addEventListener("focusout",async e=>{
+  const t=e.target.closest&&e.target.closest("textarea[data-note]");
+  if(t){const id=t.dataset.note;if(((TRACK[id]||{}).note||"")===t.value)return;await save(id,{note:t.value});flash(id)}
+});
+function flash(id){const el=document.querySelector(`[data-saved="${CSS.escape(id)}"]`);if(el){el.textContent="Saved";setTimeout(()=>{el.textContent=""},1800)}}
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-goto]");
+  if(g){location.hash="colleges";setTimeout(()=>{const d=document.getElementById("c-"+g.dataset.goto);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}},30);return}
+  const t=e.target.closest(".tile[data-bucket]");
+  if(t){filterBucket=filterBucket===t.dataset.bucket?"":t.dataset.bucket;document.getElementById("fBucket").value=filterBucket;if(location.hash!=="#deadlines")location.hash="deadlines";renderSummary();renderBoard()}
+});
+document.getElementById("exp").addEventListener("click",exportData);
+document.getElementById("imp").addEventListener("change",e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=""});
+["q","fCountry"].forEach(id=>document.getElementById(id).addEventListener("input",renderBoard));
+document.getElementById("fBucket").addEventListener("change",e=>{filterBucket=e.target.value;renderSummary();renderBoard()});
+
+function route(){
+  const v=location.hash==="#colleges"?"colleges":"deadlines";
+  document.getElementById("v-deadlines").hidden=v!=="deadlines";
+  document.getElementById("v-colleges").hidden=v!=="colleges";
+  document.querySelectorAll("nav.views a").forEach(a=>{if(a.dataset.view===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+}
+window.addEventListener("hashchange",route);
+
+/* ---------- boot ---------- */
+fetch("colleges.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+  DATA=d;
+  COURSES=d.colleges.flatMap(col=>col.courses.map(c=>Object.assign({},c,{college:col})));
+  document.getElementById("meta").textContent=`CS, Data Science & AI · ${d.batch} · data checked ${fmt(d.updated)}`;
+  document.getElementById("srcnote").textContent=d.rankNote+" Admission details, deadlines and fees come only from each university's official website. Dates are shown in your local calendar; check each course page for the closing time and time zone. Your tracker is saved in this browser: use Export and Import to move it to another device.";
+  const fc=document.getElementById("fCountry");[...new Set(d.colleges.map(c=>c.country))].forEach(c=>fc.insertAdjacentHTML("beforeend",`<option>${esc(c)}</option>`));
+  TRACK=lsLoad();route();renderAll();if(!Object.keys(TRACK).length){}
+}).catch(e=>{document.getElementById("board").innerHTML=`<p class="empty">The college data didn't load (${esc(e.message)}). Reload the page to try again.</p>`});
+})();
+</script>
+
+</body>
+</html>
