@@ -19,18 +19,18 @@ body{margin:0}
   --up:#2453b3; --up-soft:#e2e9f8; --hot:#b4361f; --hot-soft:#f8e3dd; --warm:#9a6200; --warm-soft:#f6ecd6;
   --ok:#1d7a3e; --ok-soft:#dff1e5; --past:#6d7b88; --past-soft:#e7ebef;
   --f-display:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif; --f-body:"Inter",ui-sans-serif,system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
-  --r:10px;
+  --r:10px; --title:#5b3a31;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0f151b; --surface:#16202a; --sunk:#1c2833; --line:#2a3846; --ink:#e7edf3; --ink-2:#aab7c4; --ink-3:#8494a3;
   --accent:#4fc1b5; --accent-ink:#06201d; --accent-soft:#173b38; --link:#7cc4ee;
   --up:#8fb0f5; --up-soft:#1d2b48; --hot:#f2896f; --hot-soft:#43231c; --warm:#e5b45c; --warm-soft:#3a2d14;
-  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; color-scheme:dark}}
+  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; --title:#e3b6a6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0f151b; --surface:#16202a; --sunk:#1c2833; --line:#2a3846; --ink:#e7edf3; --ink-2:#aab7c4; --ink-3:#8494a3;
   --accent:#4fc1b5; --accent-ink:#06201d; --accent-soft:#173b38; --link:#7cc4ee;
   --up:#8fb0f5; --up-soft:#1d2b48; --hot:#f2896f; --hot-soft:#43231c; --warm:#e5b45c; --warm-soft:#3a2d14;
-  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; color-scheme:dark}
+  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; --title:#e3b6a6; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);margin:0}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
@@ -53,6 +53,42 @@ nav.views a[aria-current="page"]{background:var(--surface);color:var(--ink);box-
 .backup{display:flex;gap:6px}
 .backup button,.backup .btn{font:600 .8rem var(--f-body);padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 @media (max-width:560px){.backup{width:100%}.backup>*{flex:1;text-align:center}}
+
+/* college cards */
+.country{margin-top:22px}
+.country>h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:10px;font-family:var(--f-body);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.ccard{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;color:var(--ink);text-decoration:none;transition:border-color .15s,box-shadow .15s;min-width:0}
+.ccard:hover{border-color:var(--accent);box-shadow:0 2px 10px rgb(0 0 0 / .08)}
+.ccard h3{font-size:1.1rem;font-weight:700}
+.ccard .city{color:var(--ink-3);font-size:.82rem;margin-top:2px}
+.ccard .ranks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ccard .rank{min-width:0}
+.ccard .nd{border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.ccard .nd .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:600}
+.ccard .nd .dt{font:600 .95rem var(--f-mono)}
+.ccard .nd .cn{font-size:.78rem;color:var(--ink-2)}
+/* college detail page */
+.back{display:inline-flex;gap:6px;align-items:center;margin-top:18px;font-weight:600;font-size:.9rem;text-decoration:none}
+.dhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:flex-end;margin-top:10px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.dhead h2{font-size:1.9rem;font-weight:800}
+.dhead .city{color:var(--ink-3);margin-top:2px}
+.dhead .ranks{display:flex;gap:6px;flex-wrap:wrap}
+.dsec{margin-top:26px}
+.dsec>h3{font-family:var(--f-display);font-size:1.6rem;font-weight:800;color:var(--title);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;margin-bottom:14px}
+.mlabel{font-weight:700;color:var(--hot);text-decoration:underline;text-underline-offset:3px;margin:0 0 6px}
+.mlabel::before{content:"\2756";margin-right:8px;text-decoration:none;display:inline-block}
+ul.courses{list-style:none;margin:0;padding:0 0 0 22px;display:grid;gap:14px}
+.cname{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.cname>b{font-size:1.02rem}
+.cname>b::before{content:"\27A2";margin-right:10px;font-weight:400}
+.cdetails{padding-left:30px;margin-top:6px}
+.cdetails .dlab{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.cdetails .dlab::before{content:"";display:inline-block;width:6px;height:6px;background:currentColor;margin:0 10px 2px 0}
+.cdetails ol{margin:6px 0 0;padding-left:44px}
+.cdetails ol li{margin:3px 0}
+.cdetails .dls{margin:6px 0 0 16px}
+.cdetails .mine{margin:8px 0 0 16px}
 /* summary */
 .summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-block:18px 8px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
@@ -186,6 +222,10 @@ footer.page{color:var(--ink-3);font-size:.78rem;padding-block:30px 40px}
     <div id="dossiers"></div>
   </section>
 
+  <section id="v-college" aria-label="College details" hidden>
+    <div id="detail"></div>
+  </section>
+
   <footer class="page" id="srcnote"></footer>
 </main>
 
@@ -250,40 +290,49 @@ function rowHtml(c){
     <div class="side">${pillFor(c)}${statusSelect(c)}</div></div>`;
 }
 
-/* ---------- college dossiers ---------- */
-function renderColleges(){
-  const out=[];
-  for(const cont of DATA.continents){
-    const cols=DATA.colleges.filter(c=>c.continent===cont);if(!cols.length)continue;
-    const countries=[...new Set(cols.map(c=>c.country))];
-    out.push(`<section class="continent"><h2>${esc(cont)}</h2>${countries.map(ct=>`<div class="country"><h3>${esc(ct)}</h3>${cols.filter(c=>c.country===ct).map(collegeHtml).join("")}</div>`).join("")}</section>`);
-  }
-  document.getElementById("dossiers").innerHTML=out.join("");
+/* ---------- college cards + detail page ---------- */
+function collegeNext(col){
+  const ds=COURSES.filter(c=>c.college===col&&statusOf(c.id)!=="Not applying").map(c=>({c,n:nextDeadline(c)})).filter(x=>x.n).sort((a,b)=>a.n.d.localeCompare(b.n.d));
+  return ds[0]||null;
 }
-function collegeHtml(c){
-  const cs=COURSES.filter(x=>x.college===c);
-  const cnt=b=>cs.filter(x=>bucket(x)===b).length;
-  const r=c.rank;
-  const stat=[["upcoming","p-up","upcoming"],["applied","p-ok","applied"],["passed","p-past","passed"]].map(([b,cl,l])=>cnt(b)?`<span class="pill ${cl}">${cnt(b)} ${l}</span>`:"").join("");
-  return `<details class="college" id="c-${esc(c.id)}">
-  <summary><div><h3>${esc(c.name)}</h3><div class="city">${esc(c.city)}${c.route?` · <b>${esc(c.route)}</b>`:""}</div><div class="cstat">${stat}</div></div>
-    <div class="ranks"><div class="rank"><b>${esc(r.overall)}</b><span>QS overall</span></div><div class="rank"><b>${esc(r.dsai)}</b><span>DS &amp; AI</span></div><div class="rank"><b>${esc(r.cs)}</b><span>CS &amp; IS</span></div><span class="chev" aria-hidden="true">▸</span></div></summary>
-  <div class="body">
-    <div class="sec"><h4>Courses, deadlines &amp; requirements</h4>${cs.map(courseHtml).join("")}</div>
-    <div class="sec"><h4>Requirements for all courses</h4><ul class="req">${c.general.map(g=>`<li>${A(g.t,g.u)}</li>`).join("")}</ul></div>
-    <div class="sec"><h4>Fee structure</h4><div class="tablewrap"><table><thead><tr>${c.fees.cols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${c.fees.rows.map(row=>`<tr>${row.map(v=>`<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
-      ${c.fees.links.length?`<div class="feelinks">${c.fees.links.map(l=>A(l.t,l.u)).join("")}</div>`:""}${c.fees.foot?`<div class="foot">${esc(c.fees.foot)}</div>`:""}</div>
-    <div class="sec notes"><h4>Notes for my 2027 application</h4><ul>${c.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>
-  </div></details>`;
+function ranksHtml(r){return `<div class="ranks"><div class="rank"><b>${esc(r.overall)}</b><span>QS overall</span></div><div class="rank"><b>${esc(r.dsai)}</b><span>DS &amp; AI</span></div><div class="rank"><b>${esc(r.cs)}</b><span>CS &amp; IS</span></div></div>`}
+function renderColleges(){
+  const countries=[...new Set(DATA.colleges.map(c=>c.country))];
+  document.getElementById("dossiers").innerHTML=countries.map(ct=>`<section class="country"><h2>${esc(ct)}</h2><div class="cards">${DATA.colleges.filter(c=>c.country===ct).map(cardHtml).join("")}</div></section>`).join("");
+  renderDetail();
+}
+function cardHtml(col){
+  const nx=collegeNext(col);
+  let nd;
+  if(nx){const d=daysTo(nx.n.d),u=urgency(nx.c);const same=COURSES.filter(c=>c.college===col&&nextDeadline(c)&&nextDeadline(c).d===nx.n.d).length;
+    nd=`<div><div class="lbl">Next deadline</div><div class="dt">${esc(fmt(nx.n.d))}</div><div class="cn">${same>1?same+" courses":esc(nx.c.name)}</div></div><span class="pill p-${u}">${d===0?"Today":d+" days left"}</span>`;}
+  else nd=`<div><div class="lbl">Next deadline</div><div class="dt">None open</div></div><span class="pill p-past">Closed</span>`;
+  return `<a class="ccard" href="#college-${esc(col.id)}"><div><h3>${esc(col.name)}</h3><div class="city">${esc(col.city)}${col.route?` · <b>${esc(col.route)}</b>`:""}</div></div>${ranksHtml(col.rank)}<div class="nd">${nd}</div></a>`;
+}
+function currentCollege(){const m=location.hash.match(/^#college-([a-z0-9-]+)$/);return m&&DATA?DATA.colleges.find(c=>c.id===m[1]):null}
+function renderDetail(){
+  const col=currentCollege();const el=document.getElementById("detail");
+  if(!col){el.innerHTML="";return}
+  const cs=COURSES.filter(x=>x.college===col);
+  const groups=[];cs.forEach(c=>{const g=groups.find(x=>x.deg===c.deg);g?g.items.push(c):groups.push({deg:c.deg,items:[c]})});
+  const label=deg=>({PhD:"PhD (no terminal Master's)",MRes:"Master's by Research (MRes)"}[deg]||"Master's ("+deg+")");
+  el.innerHTML=`<a class="back" href="#colleges">← All colleges</a>
+  <div class="dhead"><div><h2>${esc(col.name)}</h2><div class="city">${esc(col.city)}, ${esc(col.country)}</div></div>${ranksHtml(col.rank)}</div>
+  <section class="dsec"><h3>Fees Structure :-</h3><div class="tablewrap"><table><thead><tr>${col.fees.cols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${col.fees.rows.map(row=>`<tr>${row.map(v=>`<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+    ${col.fees.links.length?`<div class="feelinks">${col.fees.links.map(l=>A(l.t,l.u)).join("")}</div>`:""}${col.fees.foot?`<div class="foot">${esc(col.fees.foot)}</div>`:""}</section>
+  <section class="dsec"><h3>Courses Offered :-</h3>${groups.map(g=>`<p class="mlabel">${esc(label(g.deg))} :-</p><ul class="courses">${g.items.map(courseHtml).join("")}</ul>`).join("")}</section>
+  <section class="dsec"><h3>Requirements for all courses :-</h3><ul class="req">${col.general.map(g=>`<li>${A(g.t,g.u)}</li>`).join("")}</ul></section>
+  <section class="dsec"><h3>Notes :-</h3><div class="notes"><ul>${col.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div></section>`;
 }
 function courseHtml(c){
   const t=TRACK[c.id]||{};
   const dls=c.deadlines.length?c.deadlines.map(d=>`<span class="${daysTo(d.d)<0?"gone":""}">${esc(d.l)}: <span class="mono">${esc(fmt(d.d))}</span></span>`).join(""):`<span>${esc(c.tag||"No deadline published")}</span>`;
-  return `<div class="course"><div class="chead"><div class="nm"><span class="tag">${esc(c.deg)}</span> ${A(c.name,c.url)}</div>${pillFor(c)}${statusSelect(c)}</div>
-    <div class="dls">${dls}</div>
-    <ul class="req">${c.req.map(q=>`<li>${A(q.t,q.u)}</li>`).join("")}</ul>
-    <div class="mine"><label for="ad-${esc(c.id)}">Applied on</label><input type="date" id="ad-${esc(c.id)}" data-applied="${esc(c.id)}" value="${esc(t.applied||"")}">
-      <textarea id="nt-${esc(c.id)}" data-note="${esc(c.id)}" placeholder="My note (portal ID, documents pending…)" aria-label="My note for ${esc(c.name)}">${esc(t.note||"")}</textarea><span class="saved" data-saved="${esc(c.id)}"></span></div></div>`;
+  return `<li><div class="cname"><b>${esc(c.name)}</b>${pillFor(c)}${statusSelect(c)}</div>
+    <div class="cdetails"><div class="dlab">Details :-</div>
+      <ol><li>${A("Course Details",c.url)}</li>${c.req.map(q=>`<li>${A(q.t,q.u)}</li>`).join("")}</ol>
+      <div class="dls">${dls}</div>
+      <div class="mine"><label for="ad-${esc(c.id)}">Applied on</label><input type="date" id="ad-${esc(c.id)}" data-applied="${esc(c.id)}" value="${esc(t.applied||"")}">
+        <textarea id="nt-${esc(c.id)}" data-note="${esc(c.id)}" placeholder="My note (portal ID, documents pending…)" aria-label="My note for ${esc(c.name)}">${esc(t.note||"")}</textarea><span class="saved" data-saved="${esc(c.id)}"></span></div></div></li>`;
 }
 
 /* ---------- summary ---------- */
@@ -301,10 +350,7 @@ function renderSummary(){
   document.querySelectorAll(".tile[data-bucket]").forEach(t=>t.setAttribute("aria-pressed",String(t.dataset.bucket===filterBucket)));
 }
 function renderAll(){renderSummary();renderBoard();renderColleges();}
-function rerenderKeepOpen(){
-  const open=[...document.querySelectorAll("details.college[open]")].map(d=>d.id);
-  const y=window.scrollY;renderAll();open.forEach(id=>{const e=document.getElementById(id);if(e)e.open=true});window.scrollTo(0,y);
-}
+function rerenderKeepOpen(){const y=window.scrollY;renderAll();window.scrollTo(0,y)}
 
 /* ---------- storage ---------- */
 const LS="ms27-tracker";
@@ -339,7 +385,7 @@ document.addEventListener("focusout",async e=>{
 function flash(id){const el=document.querySelector(`[data-saved="${CSS.escape(id)}"]`);if(el){el.textContent="Saved";setTimeout(()=>{el.textContent=""},1800)}}
 document.addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");
-  if(g){location.hash="colleges";setTimeout(()=>{const d=document.getElementById("c-"+g.dataset.goto);if(d){d.open=true;d.scrollIntoView({behavior:"smooth",block:"start"})}},30);return}
+  if(g){location.hash="college-"+g.dataset.goto;return}
   const t=e.target.closest(".tile[data-bucket]");
   if(t){filterBucket=filterBucket===t.dataset.bucket?"":t.dataset.bucket;document.getElementById("fBucket").value=filterBucket;if(location.hash!=="#deadlines")location.hash="deadlines";renderSummary();renderBoard()}
 });
@@ -349,10 +395,15 @@ document.getElementById("imp").addEventListener("change",e=>{if(e.target.files[0
 document.getElementById("fBucket").addEventListener("change",e=>{filterBucket=e.target.value;renderSummary();renderBoard()});
 
 function route(){
-  const v=location.hash==="#colleges"?"colleges":"deadlines";
+  const hs=location.hash;
+  const v=hs==="#colleges"?"colleges":/^#college-/.test(hs)?"college":"deadlines";
   document.getElementById("v-deadlines").hidden=v!=="deadlines";
   document.getElementById("v-colleges").hidden=v!=="colleges";
-  document.querySelectorAll("nav.views a").forEach(a=>{if(a.dataset.view===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  document.getElementById("v-college").hidden=v!=="college";
+  document.querySelector(".summary").hidden=v==="college";
+  const nav=v==="college"?"colleges":v;
+  document.querySelectorAll("nav.views a").forEach(a=>{if(a.dataset.view===nav)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  if(v==="college"){if(DATA&&!currentCollege()){location.hash="colleges";return}renderDetail();window.scrollTo(0,0)}
 }
 window.addEventListener("hashchange",route);
 
