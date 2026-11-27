@@ -6,196 +6,159 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Master's 2027 Planner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-html{color-scheme:light}
-body{margin:0}
-[hidden]{display:none!important}
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-/* Layout: a sticky header with the application summary, then two views (deadline board, college dossiers) on a cool paper ground. */
+/* Layout: sticky header + summary; Deadlines list; Colleges as country-grouped cards; each college opens its own page. */
 :root{
-  --bg:#f4f6f8; --surface:#ffffff; --sunk:#eaeef2; --line:#d6dde4; --ink:#14202b; --ink-2:#4a5866; --ink-3:#6d7b88;
-  --accent:#0d6b63; --accent-ink:#ffffff; --accent-soft:#dcefec; --link:#0b5f8a;
+  --bg:#f4f6f8; --surface:#ffffff; --sunk:#eef1f4; --line:#d8dee5; --ink:#14202b; --ink-2:#465563; --ink-3:#6b7986;
+  --accent:#0d6b63; --accent-soft:#dcefec; --link:#0b5f8a; --title:#5b3a31;
   --up:#2453b3; --up-soft:#e2e9f8; --hot:#b4361f; --hot-soft:#f8e3dd; --warm:#9a6200; --warm-soft:#f6ecd6;
-  --ok:#1d7a3e; --ok-soft:#dff1e5; --past:#6d7b88; --past-soft:#e7ebef;
+  --ok:#1d7a3e; --ok-soft:#dff1e5; --past:#6b7986; --past-soft:#e7ebef;
   --f-display:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif; --f-body:"Inter",ui-sans-serif,system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
-  --r:10px; --title:#5b3a31;
+  --r:12px; color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+@media (prefers-color-scheme: dark){:root{
   --bg:#0f151b; --surface:#16202a; --sunk:#1c2833; --line:#2a3846; --ink:#e7edf3; --ink-2:#aab7c4; --ink-3:#8494a3;
-  --accent:#4fc1b5; --accent-ink:#06201d; --accent-soft:#173b38; --link:#7cc4ee;
+  --accent:#4fc1b5; --accent-soft:#173b38; --link:#7cc4ee; --title:#e8b9a8;
   --up:#8fb0f5; --up-soft:#1d2b48; --hot:#f2896f; --hot-soft:#43231c; --warm:#e5b45c; --warm-soft:#3a2d14;
-  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; --title:#e3b6a6; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f151b; --surface:#16202a; --sunk:#1c2833; --line:#2a3846; --ink:#e7edf3; --ink-2:#aab7c4; --ink-3:#8494a3;
-  --accent:#4fc1b5; --accent-ink:#06201d; --accent-soft:#173b38; --link:#7cc4ee;
-  --up:#8fb0f5; --up-soft:#1d2b48; --hot:#f2896f; --hot-soft:#43231c; --warm:#e5b45c; --warm-soft:#3a2d14;
-  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; --title:#e3b6a6; color-scheme:dark}
+  --ok:#6fd194; --ok-soft:#173a25; --past:#8494a3; --past-soft:#232f3a; color-scheme:dark}}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);margin:0}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);margin:0;padding-bottom:env(safe-area-inset-bottom,0px)}
+[hidden]{display:none!important}
 a{color:var(--link);text-underline-offset:2px}
-a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.2}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.2}
 .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 
 /* header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+header.top{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding-block:12px}
 .brand{display:flex;flex-direction:column;gap:2px;min-width:0}
 .brand h1{font-size:1.35rem;font-weight:800;letter-spacing:-.01em}
 .brand small{color:var(--ink-3);font-size:.78rem}
 nav.views{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:999px;margin-left:auto}
-nav.views a{font:600 .85rem var(--f-body);color:var(--ink-2);text-decoration:none;padding:6px 14px;border-radius:999px}
-nav.views a[aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .12)}
+nav.views a{font:600 .88rem var(--f-body);color:var(--ink-2);text-decoration:none;padding:7px 16px;border-radius:999px}
+nav.views a[aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .14)}
+@media (max-width:560px){nav.views{margin-left:0;width:100%}nav.views a{flex:1;text-align:center}}
 
-.backup{display:flex;gap:6px}
-.backup button,.backup .btn{font:600 .8rem var(--f-body);padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-@media (max-width:560px){.backup{width:100%}.backup>*{flex:1;text-align:center}}
-
-/* college cards */
-.country{margin-top:22px}
-.country>h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:10px;font-family:var(--f-body);font-weight:700}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
-.ccard{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;color:var(--ink);text-decoration:none;transition:border-color .15s,box-shadow .15s;min-width:0}
-.ccard:hover{border-color:var(--accent);box-shadow:0 2px 10px rgb(0 0 0 / .08)}
-.ccard h3{font-size:1.1rem;font-weight:700}
-.ccard .city{color:var(--ink-3);font-size:.82rem;margin-top:2px}
-.ccard .ranks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.ccard .rank{min-width:0}
-.ccard .nd{border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.ccard .nd .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:600}
-.ccard .nd .dt{font:600 .95rem var(--f-mono)}
-.ccard .nd .cn{font-size:.78rem;color:var(--ink-2)}
-/* college detail page */
-.back{display:inline-flex;gap:6px;align-items:center;margin-top:18px;font-weight:600;font-size:.9rem;text-decoration:none}
-.dhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:flex-end;margin-top:10px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.dhead h2{font-size:1.9rem;font-weight:800}
-.dhead .city{color:var(--ink-3);margin-top:2px}
-.dhead .ranks{display:flex;gap:6px;flex-wrap:wrap}
-.dsec{margin-top:26px}
-.dsec>h3{font-family:var(--f-display);font-size:1.6rem;font-weight:800;color:var(--title);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;margin-bottom:14px}
-.mlabel{font-weight:700;color:var(--hot);text-decoration:underline;text-underline-offset:3px;margin:0 0 6px}
-.mlabel::before{content:"\2756";margin-right:8px;text-decoration:none;display:inline-block}
-ul.courses{list-style:none;margin:0;padding:0 0 0 22px;display:grid;gap:14px}
-.cname{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
-.cname>b{font-size:1.02rem}
-.cname>b::before{content:"\27A2";margin-right:10px;font-weight:400}
-.cdetails{padding-left:30px;margin-top:6px}
-.cdetails .dlab{font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.cdetails .dlab::before{content:"";display:inline-block;width:6px;height:6px;background:currentColor;margin:0 10px 2px 0}
-.cdetails ol{margin:6px 0 0;padding-left:44px}
-.cdetails ol li{margin:3px 0}
-.cdetails .dls{margin:6px 0 0 16px}
-.cdetails .mine{margin:8px 0 0 16px}
 /* summary */
-.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-block:18px 8px}
-.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-block:18px 6px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left;font:inherit;color:inherit}
+button.tile{cursor:pointer}
 .tile[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
-.tile .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:600}
+.tile .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
 .tile .v{font:700 1.7rem/1.1 var(--f-display)}
-.tile.next .v{font-size:1rem;line-height:1.35}
-.tile.next{cursor:default}
+.tile.next .v{font-size:1.05rem;line-height:1.35}
 .tile .sub{font-size:.8rem;color:var(--ink-2)}
-@media (max-width:760px){.summary{grid-template-columns:repeat(3,minmax(0,1fr))}.tile.next{grid-column:1/-1;order:-1}}
-@media (max-width:560px){nav.views{margin-left:0;width:100%}nav.views a{flex:1;text-align:center}.tile{padding:10px}.tile .v{font-size:1.4rem}.tile .sub{font-size:.72rem}
-  .controls select{flex:1 1 140px}.count{margin-left:0;width:100%}}
+@media (max-width:760px){.summary{grid-template-columns:repeat(3,minmax(0,1fr))}.tile.next{grid-column:1/-1;order:-1}.tile .v{font-size:1.4rem}.tile .sub{font-size:.72rem}}
 
-.banner{margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--warm-soft);color:var(--warm);font-size:.85rem}
-
-/* controls */
-.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:12px}
-.controls input,.controls select{font:inherit;font-size:.9rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
-.controls input{flex:1 1 200px}
-.count{color:var(--ink-3);font-size:.85rem;margin-left:auto}
-
-/* pills */
-.pill{display:inline-flex;align-items:center;gap:6px;font:600 .72rem/1 var(--f-body);padding:5px 8px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
+/* pills & tags */
+.pill{display:inline-flex;align-items:center;gap:6px;font:700 .74rem/1 var(--f-body);padding:6px 9px;border-radius:999px;white-space:nowrap}
 .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .p-up{background:var(--up-soft);color:var(--up)} .p-hot{background:var(--hot-soft);color:var(--hot)} .p-warm{background:var(--warm-soft);color:var(--warm)}
 .p-ok{background:var(--ok-soft);color:var(--ok)} .p-past{background:var(--past-soft);color:var(--past)}
-.tag{font:600 .68rem/1 var(--f-mono);padding:4px 6px;border-radius:5px;background:var(--sunk);color:var(--ink-2);white-space:nowrap}
+.tag{font:700 .68rem/1 var(--f-mono);padding:4px 6px;border-radius:5px;background:var(--sunk);color:var(--ink-2);white-space:nowrap}
+select.status{font:600 .84rem var(--f-body);padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:0}
 
-/* deadline board */
+/* deadlines list */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:12px}
+.controls input,.controls select{font:inherit;font-size:.9rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
+.controls input{flex:1 1 220px}
+@media (max-width:560px){.controls select{flex:1 1 140px}}
+.count{color:var(--ink-3);font-size:.85rem;margin-left:auto}
 .month{margin-top:18px}
-.month h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);padding-bottom:6px;border-bottom:1px solid var(--line)}
+.month h2{font:700 .78rem var(--f-body);text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);padding-bottom:6px;border-bottom:1px solid var(--line)}
 .row{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line)}
 .row.dim{opacity:.55}
 .date{display:flex;flex-direction:column;line-height:1.15}
-.date b{font:600 1.05rem var(--f-mono)}
+.date b{font:700 1.05rem var(--f-mono)}
 .date span{font-size:.72rem;color:var(--ink-3)}
 .what{min-width:0}
 .what .c{font-size:.8rem;color:var(--ink-2)}
-.what .c button{all:unset;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:2px}
+.what .c a{font-weight:600}
 .what .n{font-weight:600}
-.what .n a{color:var(--ink);text-decoration-color:var(--line)}
-.what .n a:hover{text-decoration-color:currentColor}
 .what .dl{font-size:.8rem;color:var(--ink-3)}
 .side{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-select.status{font:600 .8rem var(--f-body);padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
 @media (max-width:640px){.row{grid-template-columns:70px minmax(0,1fr)}.side{grid-column:2;justify-content:flex-start}}
 .empty{padding:28px 4px;color:var(--ink-3)}
 
-/* colleges */
-.continent{margin-top:26px}
-.continent>h2{font-size:1.5rem;font-weight:800}
-.country{margin-top:14px}
-.country>h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:10px}
-.college{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:16px;scroll-margin-top:90px}
-.college>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:center;padding:16px 18px}
-.college>summary::-webkit-details-marker{display:none}
-.college h3{font-size:1.25rem;font-weight:700}
-.college .city{color:var(--ink-3);font-size:.85rem}
-.ranks{display:flex;gap:6px}
-.rank{border:1px solid var(--line);border-radius:8px;padding:5px 9px;text-align:center;min-width:64px}
-.rank b{display:block;font:600 1.05rem var(--f-mono)}
-.rank span{font-size:.64rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
-.chev{transition:transform .15s;color:var(--ink-3)}
-.college[open] .chev{transform:rotate(90deg)}
-.cstat{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
-@media (max-width:640px){.college>summary{grid-template-columns:1fr}.ranks{flex-wrap:wrap}}
-.body{padding:0 18px 18px;display:grid;gap:18px}
-.sec h4{font:700 .78rem var(--f-body);text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);margin:0 0 8px}
-.notes{background:var(--accent-soft);border-radius:8px;padding:10px 14px}
-.notes ul{margin:0;padding-left:18px}
-.notes li+li{margin-top:4px}
-ul.req{margin:0;padding-left:18px}
-ul.req li{margin:3px 0}
-.course{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px}
-.course+.course{margin-top:8px}
-.chead{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
-.chead .nm{font-weight:600;font-size:1rem;min-width:0;flex:1 1 260px}
-.dls{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--ink-2)}
-.dls .mono{color:var(--ink)}
-.dls .gone{text-decoration:line-through;color:var(--ink-3)}
-.mine{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.8rem;color:var(--ink-3)}
-.mine input,.mine textarea{font:inherit;font-size:.85rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);padding:5px 8px}
-.mine textarea{flex:1 1 260px;min-height:34px;resize:vertical}
-.saved{color:var(--ok)}
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
-table{border-collapse:collapse;width:100%;font-size:.86rem}
-th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
-th:first-child,td:first-child{text-align:left;white-space:normal;min-width:160px}
-thead th{background:var(--sunk);font-weight:600;font-size:.78rem}
+/* college cards */
+.country{margin-top:24px}
+.country>h2{font:700 .8rem var(--f-body);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.ccard{display:flex;flex-direction:column;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;color:var(--ink);text-decoration:none;transition:border-color .15s,box-shadow .15s;min-width:0}
+.ccard:hover{border-color:var(--accent);box-shadow:0 3px 12px rgb(0 0 0 / .08)}
+.ccard h3{font-size:1.1rem;font-weight:700}
+.ccard .city{color:var(--ink-3);font-size:.82rem;margin-top:2px}
+.ccard .dl-hero{background:var(--sunk);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ccard .dl-hero .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+.ccard .dl-hero .dt{font:700 1.3rem/1.2 var(--f-mono)}
+.ccard .dl-hero .cn{font-size:.8rem;color:var(--ink-2)}
+.ccard .days{font:800 1.5rem/1 var(--f-display);text-align:right}
+.ccard .days small{display:block;font:600 .7rem var(--f-body);color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.d-hot{color:var(--hot)} .d-warm{color:var(--warm)} .d-up{color:var(--up)} .d-past{color:var(--past)}
+.ccard .meta{display:flex;justify-content:space-between;gap:8px;font-size:.78rem;color:var(--ink-3);flex-wrap:wrap}
+
+/* college page */
+.back{display:inline-flex;gap:6px;align-items:center;margin-top:18px;font-weight:600;font-size:.9rem;text-decoration:none}
+.dhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 20px;align-items:flex-end;margin-top:10px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.dhead h2{font-size:1.9rem;font-weight:800}
+.dhead .city{color:var(--ink-3);margin-top:2px}
+.rankline{display:flex;gap:6px;flex-wrap:wrap}
+.rankchip{font-size:.78rem;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 10px}
+.rankchip b{font-family:var(--f-mono);color:var(--ink)}
+.dsec{margin-top:28px}
+.dsec>h3{font-size:1.35rem;font-weight:800;color:var(--title);margin-bottom:12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:170px}
+thead th{background:var(--sunk);font-weight:700;font-size:.78rem}
 tbody tr:last-child td{border-bottom:0}
 td{font-variant-numeric:tabular-nums}
-.feelinks{display:flex;flex-wrap:wrap;gap:12px;font-size:.84rem;margin-top:8px}
-.foot{font-size:.78rem;color:var(--ink-3);margin-top:6px}
+.linkrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.lk{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:600;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-decoration:none;color:var(--link)}
+.lk::after{content:"\2197";font-size:.8em;opacity:.7}
+.lk:hover{border-color:var(--link)}
+.foot{font-size:.78rem;color:var(--ink-3);margin-top:8px}
+
+.courses{display:grid;gap:14px}
+.course{display:grid;grid-template-columns:minmax(0,1fr) 270px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.course .main{padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.course .nm{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.course .nm h4{font-size:1.08rem;font-weight:700}
+.course .dl-label{font:700 .72rem var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+ol.details{margin:0;padding-left:22px;display:grid;gap:4px}
+ol.details li::marker{color:var(--ink-3);font-family:var(--f-mono);font-size:.85em}
+ol.details a{font-weight:600}
+.cnote{font-size:.84rem;color:var(--ink-2);background:var(--accent-soft);border-radius:8px;padding:8px 10px}
+.cnote b{color:var(--accent)}
+.course .track{background:var(--sunk);padding:16px;display:flex;flex-direction:column;gap:12px;border-left:1px solid var(--line)}
+.course .track .k{font:700 .68rem var(--f-body);text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:3px}
+.bigdate{font:700 1.35rem/1.15 var(--f-mono)}
+.bigdate.gone{color:var(--ink-3);text-decoration:line-through}
+.otherdl{font-size:.78rem;color:var(--ink-2);display:grid;gap:2px;margin-top:6px}
+.otherdl .gone{text-decoration:line-through;color:var(--ink-3)}
+.track input[type=date]{font:600 .88rem var(--f-mono);padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%}
+.track select.status{width:100%}
+.applied-on.set{color:var(--ok)}
+@media (max-width:720px){.course{grid-template-columns:1fr}.course .track{border-left:0;border-top:1px solid var(--line)}}
+.notes ul{margin:0;padding-left:20px;display:grid;gap:6px}
 footer.page{color:var(--ink-3);font-size:.78rem;padding-block:30px 40px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-
 <header class="top">
   <div class="wrap">
-    <div class="brand"><h1>Master's 2027</h1><small id="meta">CS, Data Science &amp; AI · loading…</small></div>
+    <div class="brand"><h1>Master's 2027</h1><small id="meta">CS, Data Science &amp; AI</small></div>
     <nav class="views" aria-label="Views">
       <a href="#deadlines" data-view="deadlines">Deadlines</a>
       <a href="#colleges" data-view="colleges">Colleges</a>
     </nav>
-    <div class="backup"><button type="button" id="exp">Export tracker</button><label class="btn" for="imp">Import</label><input type="file" id="imp" accept="application/json,.json" hidden></div>
   </div>
 </header>
 
@@ -206,7 +169,6 @@ footer.page{color:var(--ink-3);font-size:.78rem;padding-block:30px 40px}
     <button class="tile" data-bucket="applied" aria-pressed="false"><span class="k">Applied</span><span class="v mono" id="nAp">–</span><span class="sub">marked by you</span></button>
     <button class="tile" data-bucket="passed" aria-pressed="false"><span class="k">Passed</span><span class="v mono" id="nPa">–</span><span class="sub">deadline gone, not applied</span></button>
   </section>
-  <div id="storeNote" class="banner" hidden></div>
 
   <section id="v-deadlines" aria-label="Deadlines">
     <div class="controls">
@@ -218,13 +180,8 @@ footer.page{color:var(--ink-3);font-size:.78rem;padding-block:30px 40px}
     <div id="board"></div>
   </section>
 
-  <section id="v-colleges" aria-label="Colleges" hidden>
-    <div id="dossiers"></div>
-  </section>
-
-  <section id="v-college" aria-label="College details" hidden>
-    <div id="detail"></div>
-  </section>
+  <section id="v-colleges" aria-label="Colleges" hidden><div id="cardsView"></div></section>
+  <section id="v-college" aria-label="College details" hidden><div id="detail"></div></section>
 
   <footer class="page" id="srcnote"></footer>
 </main>
@@ -238,165 +195,147 @@ const safeUrl=u=>/^https:\/\//.test(u)?u:"#";
 const A=(t,u,cls)=>`<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener noreferrer"${cls?` class="${cls}"`:""}>${esc(t)}</a>`;
 const DAY=86400000;
 const today=(()=>{const d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate())})();
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 const parse=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
 const fmt=(s,o)=>parse(s).toLocaleDateString("en-GB",o||{day:"numeric",month:"short",year:"numeric"});
 const daysTo=s=>Math.round((parse(s)-today)/DAY);
 
-let DATA=null, COURSES=[], TRACK={}, store=null, filterBucket="";
+let DATA=null,COURSES=[],TRACK={},filterBucket="";
+const LS="ms27-tracker";
+try{TRACK=JSON.parse(localStorage.getItem(LS)||"{}")||{}}catch(e){TRACK={}}
+function persist(){try{localStorage.setItem(LS,JSON.stringify(TRACK))}catch(e){}}
 
-function nextDeadline(c){const f=c.deadlines.filter(d=>daysTo(d.d)>=0).sort((a,b)=>a.d.localeCompare(b.d));return f[0]||null}
-function lastDeadline(c){const s=[...c.deadlines].sort((a,b)=>b.d.localeCompare(a.d));return s[0]||null}
-function statusOf(id){return (TRACK[id]&&TRACK[id].status)||"Not started"}
-function bucket(c){if(APPLIED.has(statusOf(c.id)))return "applied";return nextDeadline(c)?"upcoming":"passed"}
-function urgency(c){const n=nextDeadline(c);if(!n)return null;const d=daysTo(n.d);return d<=7?"hot":d<=30?"warm":"up"}
+const nextDeadline=c=>c.deadlines.filter(d=>daysTo(d.d)>=0).sort((a,b)=>a.d.localeCompare(b.d))[0]||null;
+const lastDeadline=c=>[...c.deadlines].sort((a,b)=>b.d.localeCompare(a.d))[0]||null;
+const statusOf=id=>(TRACK[id]&&TRACK[id].status)||"Not started";
+const bucket=c=>APPLIED.has(statusOf(c.id))?"applied":nextDeadline(c)?"upcoming":"passed";
+const urgencyDays=d=>d<=7?"hot":d<=30?"warm":"up";
+const daysText=d=>d===0?"Closes today":d===1?"1 day left":`${d} days left`;
 function pillFor(c){
-  const st=statusOf(c.id),b=bucket(c);
-  if(b==="applied")return `<span class="pill p-ok">${esc(st)}</span>`;
+  const b=bucket(c);
+  if(b==="applied")return `<span class="pill p-ok">${esc(statusOf(c.id))}</span>`;
   if(b==="passed")return `<span class="pill p-past">${c.deadlines.length?"Deadline passed":"Not open"}</span>`;
-  const n=nextDeadline(c),d=daysTo(n.d),u=urgency(c);
-  const txt=d===0?"Closes today":d===1?"1 day left":`${d} days left`;
-  return `<span class="pill p-${u}">${txt}</span>`;
+  const d=daysTo(nextDeadline(c).d);return `<span class="pill p-${urgencyDays(d)}">${daysText(d)}</span>`;
 }
-function statusSelect(c){
-  return `<select class="status" data-course="${esc(c.id)}" aria-label="My status for ${esc(c.name)}">${STATUSES.map(s=>`<option${s===statusOf(c.id)?" selected":""}>${s}</option>`).join("")}</select>`;
-}
+const statusSelect=c=>`<select class="status" data-course="${esc(c.id)}" aria-label="My status for ${esc(c.name)}">${STATUSES.map(s=>`<option${s===statusOf(c.id)?" selected":""}>${s}</option>`).join("")}</select>`;
 
-/* ---------- deadlines board ---------- */
+/* ---------- Deadlines view ---------- */
 function renderBoard(){
   const q=document.getElementById("q").value.trim().toLowerCase();
-  const fc=document.getElementById("fCountry").value, fb=document.getElementById("fBucket").value;
-  let list=COURSES.filter(c=>(!fc||c.college.country===fc)&&(!fb||bucket(c)===fb)&&(!q||(c.name+" "+c.college.name+" "+c.college.short).toLowerCase().includes(q)));
-  const keyDate=c=>{const n=nextDeadline(c);if(n)return n.d;const l=lastDeadline(c);return l?l.d:"9999-12-31"};
+  const fc=document.getElementById("fCountry").value,fb=document.getElementById("fBucket").value;
+  const list=COURSES.filter(c=>(!fc||c.college.country===fc)&&(!fb||bucket(c)===fb)&&(!q||(c.name+" "+c.college.name+" "+c.college.short).toLowerCase().includes(q)));
+  const keyDate=c=>{const n=nextDeadline(c)||lastDeadline(c);return n?n.d:"9999-12-31"};
   const order={upcoming:0,applied:1,passed:2};
   list.sort((a,b)=>(order[bucket(a)]-order[bucket(b)])||keyDate(a).localeCompare(keyDate(b))||a.name.localeCompare(b.name));
   document.getElementById("count").textContent=`${list.length} of ${COURSES.length} courses`;
   if(!list.length){document.getElementById("board").innerHTML=`<p class="empty">No courses match. Clear the search or pick another filter.</p>`;return}
   const groups=[];let cur=null;
-  for(const c of list){
-    const b=bucket(c);const kd=keyDate(c);
-    const label=b==="upcoming"?parse(kd).toLocaleDateString("en-GB",{month:"long",year:"numeric"}):b==="applied"?"Applied":"Passed or not open";
-    if(!cur||cur.label!==label){cur={label,items:[]};groups.push(cur)}
-    cur.items.push(c);
-  }
+  for(const c of list){const b=bucket(c);
+    const label=b==="upcoming"?parse(keyDate(c)).toLocaleDateString("en-GB",{month:"long",year:"numeric"}):b==="applied"?"Applied":"Passed or not open";
+    if(!cur||cur.label!==label){cur={label,items:[]};groups.push(cur)}cur.items.push(c)}
   document.getElementById("board").innerHTML=groups.map(g=>`<div class="month"><h2>${esc(g.label)}</h2>${g.items.map(rowHtml).join("")}</div>`).join("");
 }
 function rowHtml(c){
   const n=nextDeadline(c)||lastDeadline(c);
   const dl=n?`<div class="date"><b>${esc(parse(n.d).toLocaleDateString("en-GB",{day:"2-digit",month:"short"}))}</b><span>${esc(parse(n.d).toLocaleDateString("en-GB",{weekday:"short",year:"numeric"}))}</span></div>`:`<div class="date"><b>—</b><span>no date</span></div>`;
-  const others=c.deadlines.map(d=>`${d.l}: ${fmt(d.d)}`).join(" · ");
+  const all=c.deadlines.map(d=>`${d.l}: ${fmt(d.d)}`).join(" · ");
+  const first=c.links[0];
   return `<div class="row${statusOf(c.id)==="Not applying"?" dim":""}">${dl}
-    <div class="what"><div class="c"><button data-goto="${esc(c.college.id)}">${esc(c.college.short)}</button> · ${esc(c.college.country)} · <span class="tag">${esc(c.deg)}</span></div>
-      <div class="n">${A(c.name,c.url)}</div>${others?`<div class="dl">${esc(others)}</div>`:""}</div>
+    <div class="what"><div class="c"><a href="#college-${esc(c.college.id)}">${esc(c.college.short)}</a> · ${esc(c.college.country)} · <span class="tag">${esc(c.deg)}</span></div>
+      <div class="n">${first?A(c.name,first.u):esc(c.name)}</div>${all?`<div class="dl">${esc(all)}</div>`:""}</div>
     <div class="side">${pillFor(c)}${statusSelect(c)}</div></div>`;
 }
 
-/* ---------- college cards + detail page ---------- */
+/* ---------- Colleges view ---------- */
 function collegeNext(col){
-  const ds=COURSES.filter(c=>c.college===col&&statusOf(c.id)!=="Not applying").map(c=>({c,n:nextDeadline(c)})).filter(x=>x.n).sort((a,b)=>a.n.d.localeCompare(b.n.d));
-  return ds[0]||null;
+  return COURSES.filter(c=>c.college===col&&bucket(c)==="upcoming"&&statusOf(c.id)!=="Not applying").map(c=>({c,n:nextDeadline(c)})).sort((a,b)=>a.n.d.localeCompare(b.n.d))[0]||null;
 }
-function ranksHtml(r){return `<div class="ranks"><div class="rank"><b>${esc(r.overall)}</b><span>QS overall</span></div><div class="rank"><b>${esc(r.dsai)}</b><span>DS &amp; AI</span></div><div class="rank"><b>${esc(r.cs)}</b><span>CS &amp; IS</span></div></div>`}
-function renderColleges(){
+function renderCards(){
   const countries=[...new Set(DATA.colleges.map(c=>c.country))];
-  document.getElementById("dossiers").innerHTML=countries.map(ct=>`<section class="country"><h2>${esc(ct)}</h2><div class="cards">${DATA.colleges.filter(c=>c.country===ct).map(cardHtml).join("")}</div></section>`).join("");
-  renderDetail();
+  document.getElementById("cardsView").innerHTML=countries.map(ct=>`<section class="country"><h2>${esc(ct)}</h2><div class="cards">${DATA.colleges.filter(c=>c.country===ct).map(cardHtml).join("")}</div></section>`).join("");
 }
 function cardHtml(col){
+  const cs=COURSES.filter(c=>c.college===col);
   const nx=collegeNext(col);
-  let nd;
-  if(nx){const d=daysTo(nx.n.d),u=urgency(nx.c);const same=COURSES.filter(c=>c.college===col&&nextDeadline(c)&&nextDeadline(c).d===nx.n.d).length;
-    nd=`<div><div class="lbl">Next deadline</div><div class="dt">${esc(fmt(nx.n.d))}</div><div class="cn">${same>1?same+" courses":esc(nx.c.name)}</div></div><span class="pill p-${u}">${d===0?"Today":d+" days left"}</span>`;}
-  else nd=`<div><div class="lbl">Next deadline</div><div class="dt">None open</div></div><span class="pill p-past">Closed</span>`;
-  return `<a class="ccard" href="#college-${esc(col.id)}"><div><h3>${esc(col.name)}</h3><div class="city">${esc(col.city)}${col.route?` · <b>${esc(col.route)}</b>`:""}</div></div>${ranksHtml(col.rank)}<div class="nd">${nd}</div></a>`;
+  const applied=cs.filter(c=>bucket(c)==="applied").length,open=cs.filter(c=>bucket(c)==="upcoming").length;
+  let hero;
+  if(nx){const d=daysTo(nx.n.d);const same=cs.filter(c=>bucket(c)==="upcoming"&&nextDeadline(c).d===nx.n.d).length;
+    hero=`<div><div class="lbl">Next deadline</div><div class="dt">${esc(fmt(nx.n.d))}</div><div class="cn">${same>1?same+" courses":esc(nx.c.name)}</div></div><div class="days d-${urgencyDays(d)}">${d}<small>${d===1?"day left":"days left"}</small></div>`}
+  else hero=`<div><div class="lbl">Next deadline</div><div class="dt">None open</div><div class="cn">${applied?"All applied":"All deadlines passed"}</div></div><div class="days d-past">—</div>`;
+  const r=col.rank;
+  return `<a class="ccard" href="#college-${esc(col.id)}">
+    <div><h3>${esc(col.name)}</h3><div class="city">${esc(col.city)}${col.route?` · <b>${esc(col.route)}</b>`:""}</div></div>
+    <div class="dl-hero">${hero}</div>
+    <div class="meta"><span>${cs.length} course${cs.length>1?"s":""} · ${open} open${applied?` · ${applied} applied`:""}</span><span>QS #${esc(r.overall)} · DS&amp;AI ${esc(r.dsai)} · CS ${esc(r.cs)}</span></div></a>`;
 }
-function currentCollege(){const m=location.hash.match(/^#college-([a-z0-9-]+)$/);return m&&DATA?DATA.colleges.find(c=>c.id===m[1]):null}
+const currentCollege=()=>{const m=location.hash.match(/^#college-([a-z0-9-]+)$/);return m&&DATA?DATA.colleges.find(c=>c.id===m[1]):null};
 function renderDetail(){
-  const col=currentCollege();const el=document.getElementById("detail");
+  const col=currentCollege(),el=document.getElementById("detail");
   if(!col){el.innerHTML="";return}
-  const cs=COURSES.filter(x=>x.college===col);
-  const groups=[];cs.forEach(c=>{const g=groups.find(x=>x.deg===c.deg);g?g.items.push(c):groups.push({deg:c.deg,items:[c]})});
-  const label=deg=>({PhD:"PhD (no terminal Master's)",MRes:"Master's by Research (MRes)"}[deg]||"Master's ("+deg+")");
+  const cs=COURSES.filter(x=>x.college===col),r=col.rank;
   el.innerHTML=`<a class="back" href="#colleges">← All colleges</a>
-  <div class="dhead"><div><h2>${esc(col.name)}</h2><div class="city">${esc(col.city)}, ${esc(col.country)}</div></div>${ranksHtml(col.rank)}</div>
-  <section class="dsec"><h3>Fees Structure :-</h3><div class="tablewrap"><table><thead><tr>${col.fees.cols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${col.fees.rows.map(row=>`<tr>${row.map(v=>`<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
-    ${col.fees.links.length?`<div class="feelinks">${col.fees.links.map(l=>A(l.t,l.u)).join("")}</div>`:""}${col.fees.foot?`<div class="foot">${esc(col.fees.foot)}</div>`:""}</section>
-  <section class="dsec"><h3>Courses Offered :-</h3>${groups.map(g=>`<p class="mlabel">${esc(label(g.deg))} :-</p><ul class="courses">${g.items.map(courseHtml).join("")}</ul>`).join("")}</section>
-  <section class="dsec"><h3>Requirements for all courses :-</h3><ul class="req">${col.general.map(g=>`<li>${A(g.t,g.u)}</li>`).join("")}</ul></section>
-  <section class="dsec"><h3>Notes :-</h3><div class="notes"><ul>${col.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div></section>`;
+  <div class="dhead"><div><h2>${esc(col.name)}</h2><div class="city">${esc(col.city)}, ${esc(col.country)}${col.route?` · <b>${esc(col.route)}</b>`:""}</div></div>
+    <div class="rankline"><span class="rankchip">QS overall <b>${esc(r.overall)}</b></span><span class="rankchip">Data Science &amp; AI <b>${esc(r.dsai)}</b></span><span class="rankchip">CS &amp; IS <b>${esc(r.cs)}</b></span></div></div>
+  <section class="dsec"><h3>Fee Structure</h3><div class="panel"><div class="tablewrap"><table><thead><tr>${col.fees.cols.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${col.fees.rows.map(row=>`<tr>${row.map(v=>`<td>${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+    ${col.fees.links.length?`<div class="linkrow">${col.fees.links.map(l=>A(l.t,l.u,"lk")).join("")}</div>`:""}${col.fees.foot?`<div class="foot">${esc(col.fees.foot)}</div>`:""}</div></section>
+  <section class="dsec"><h3>Courses Offered</h3><div class="courses">${cs.map(courseHtml).join("")}</div></section>
+  ${col.links.length?`<section class="dsec"><h3>Pages for all courses</h3><div class="panel"><div class="linkrow" style="margin-top:0">${col.links.map(l=>A(l.t,l.u,"lk")).join("")}</div></div></section>`:""}
+  ${col.notes.length?`<section class="dsec"><h3>Notes</h3><div class="panel notes"><ul>${col.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div></section>`:""}`;
 }
 function courseHtml(c){
   const t=TRACK[c.id]||{};
-  const dls=c.deadlines.length?c.deadlines.map(d=>`<span class="${daysTo(d.d)<0?"gone":""}">${esc(d.l)}: <span class="mono">${esc(fmt(d.d))}</span></span>`).join(""):`<span>${esc(c.tag||"No deadline published")}</span>`;
-  return `<li><div class="cname"><b>${esc(c.name)}</b>${pillFor(c)}${statusSelect(c)}</div>
-    <div class="cdetails"><div class="dlab">Details :-</div>
-      <ol><li>${A("Course Details",c.url)}</li>${c.req.map(q=>`<li>${A(q.t,q.u)}</li>`).join("")}</ol>
-      <div class="dls">${dls}</div>
-      <div class="mine"><label for="ad-${esc(c.id)}">Applied on</label><input type="date" id="ad-${esc(c.id)}" data-applied="${esc(c.id)}" value="${esc(t.applied||"")}">
-        <textarea id="nt-${esc(c.id)}" data-note="${esc(c.id)}" placeholder="My note (portal ID, documents pending…)" aria-label="My note for ${esc(c.name)}">${esc(t.note||"")}</textarea><span class="saved" data-saved="${esc(c.id)}"></span></div></div></li>`;
+  const n=nextDeadline(c),main=n||lastDeadline(c);
+  const deadlineBlock=main
+    ?`<div><div class="k">${esc(main.l)}</div><div class="bigdate${n?"":" gone"}">${esc(fmt(main.d))}</div><div style="margin-top:6px">${pillFor(c)}</div>
+       ${c.deadlines.length>1?`<div class="otherdl">${c.deadlines.filter(d=>d!==main).map(d=>`<span class="${daysTo(d.d)<0?"gone":""}">${esc(d.l)}: ${esc(fmt(d.d))}</span>`).join("")}</div>`:""}</div>`
+    :`<div><div class="k">Deadline</div><div class="bigdate gone">${esc(c.tag||"Not published")}</div></div>`;
+  return `<article class="course">
+    <div class="main">
+      <div class="nm"><span class="tag">${esc(c.deg)}</span><h4>${esc(c.name)}</h4></div>
+      <div><div class="dl-label">Details</div><ol class="details">${c.links.map(l=>`<li>${A(l.t,l.u)}</li>`).join("")}</ol></div>
+      ${c.note?`<div class="cnote"><b>Note:</b> ${esc(c.note)}</div>`:""}
+    </div>
+    <div class="track">
+      ${deadlineBlock}
+      <div><div class="k">My status</div>${statusSelect(c)}</div>
+      <div><label class="k applied-on${t.applied?" set":""}" for="ad-${esc(c.id)}">Applied on</label><input type="date" id="ad-${esc(c.id)}" data-applied="${esc(c.id)}" value="${esc(t.applied||"")}"></div>
+    </div></article>`;
 }
 
-/* ---------- summary ---------- */
+/* ---------- Summary ---------- */
 function renderSummary(){
   const by=b=>COURSES.filter(c=>bucket(c)===b).length;
   document.getElementById("nUp").textContent=by("upcoming");
   document.getElementById("nAp").textContent=by("applied");
   document.getElementById("nPa").textContent=by("passed");
   const up=COURSES.filter(c=>bucket(c)==="upcoming"&&statusOf(c.id)!=="Not applying").map(c=>({c,n:nextDeadline(c)})).sort((a,b)=>a.n.d.localeCompare(b.n.d));
-  if(up.length){const {c,n}=up[0];const same=up.filter(x=>x.n.d===n.d&&x.c.college===c.college).length;
-    const d=daysTo(n.d);
+  if(up.length){const {c,n}=up[0];const same=up.filter(x=>x.n.d===n.d&&x.c.college===c.college).length;const d=daysTo(n.d);
     document.getElementById("nextDl").textContent=`${c.college.short}, ${fmt(n.d,{day:"numeric",month:"short"})}`;
     document.getElementById("nextSub").textContent=`${d===0?"today":d===1?"tomorrow":"in "+d+" days"} · ${same>1?same+" courses":c.name}`;
-  } else {document.getElementById("nextDl").textContent="Nothing upcoming";document.getElementById("nextSub").textContent=""}
+  }else{document.getElementById("nextDl").textContent="Nothing upcoming";document.getElementById("nextSub").textContent=""}
   document.querySelectorAll(".tile[data-bucket]").forEach(t=>t.setAttribute("aria-pressed",String(t.dataset.bucket===filterBucket)));
 }
-function renderAll(){renderSummary();renderBoard();renderColleges();}
-function rerenderKeepOpen(){const y=window.scrollY;renderAll();window.scrollTo(0,y)}
+function renderAll(){const y=window.scrollY;renderSummary();renderBoard();renderCards();renderDetail();window.scrollTo(0,y)}
 
-/* ---------- storage ---------- */
-const LS="ms27-tracker";
-function lsLoad(){try{return JSON.parse(localStorage.getItem(LS)||"{}")}catch(e){return {}}}
-function lsSave(){try{localStorage.setItem(LS,JSON.stringify(TRACK))}catch(e){}}
-const pending={};
-async function save(id,patch){
-  TRACK[id]=Object.assign({},TRACK[id],patch,{updatedAt:new Date().toISOString()});
-  if(!store){lsSave();return true}
-  const prev=pending[id]||Promise.resolve();
-  const p=prev.then(()=>store.doc("tracker/"+id).set(TRACK[id])).then(()=>true,e=>{showNote("Could not save to your online tracker ("+(e&&e.code||"error")+"). Changes are kept on this device for now.");lsSave();return false});
-  pending[id]=p;return p;
-}
-function showNote(t){const n=document.getElementById("storeNote");n.textContent=t;n.hidden=false}
-
-function connect(){}
-function exportData(){const blob=new Blob([JSON.stringify({exported:new Date().toISOString(),tracker:TRACK},null,1)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="masters-2027-tracker-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
-function importData(file){const r=new FileReader();r.onload=()=>{try{const j=JSON.parse(r.result);const t=j.tracker||j;if(typeof t!=="object")throw 0;TRACK=Object.assign({},TRACK,t);lsSave();rerenderKeepOpen();showNote("Imported "+Object.keys(t).length+" tracker entries.")}catch(err){showNote("That file isn't a tracker backup. Choose a file saved with Export.")}};r.readAsText(file)}
-/* ---------- events ---------- */
-document.addEventListener("change",async e=>{
+/* ---------- Events ---------- */
+document.addEventListener("change",e=>{
   const s=e.target.closest("select.status");
-  if(s){const id=s.dataset.course;const patch={status:s.value};
-    if(APPLIED.has(s.value)&&!(TRACK[id]&&TRACK[id].applied)){patch.applied=today.toISOString().slice(0,10)}
-    save(id,patch);rerenderKeepOpen();return}
+  if(s){const id=s.dataset.course;const rec=Object.assign({},TRACK[id],{status:s.value});
+    if(APPLIED.has(s.value)&&!rec.applied)rec.applied=iso(today);
+    TRACK[id]=rec;persist();renderAll();return}
   const d=e.target.closest("input[data-applied]");
-  if(d){await save(d.dataset.applied,{applied:d.value});flash(d.dataset.applied)}
+  if(d){const id=d.dataset.applied;TRACK[id]=Object.assign({},TRACK[id],{applied:d.value});persist();renderAll()}
 });
-document.addEventListener("focusout",async e=>{
-  const t=e.target.closest&&e.target.closest("textarea[data-note]");
-  if(t){const id=t.dataset.note;if(((TRACK[id]||{}).note||"")===t.value)return;await save(id,{note:t.value});flash(id)}
-});
-function flash(id){const el=document.querySelector(`[data-saved="${CSS.escape(id)}"]`);if(el){el.textContent="Saved";setTimeout(()=>{el.textContent=""},1800)}}
 document.addEventListener("click",e=>{
-  const g=e.target.closest("[data-goto]");
-  if(g){location.hash="college-"+g.dataset.goto;return}
   const t=e.target.closest(".tile[data-bucket]");
   if(t){filterBucket=filterBucket===t.dataset.bucket?"":t.dataset.bucket;document.getElementById("fBucket").value=filterBucket;if(location.hash!=="#deadlines")location.hash="deadlines";renderSummary();renderBoard()}
 });
-document.getElementById("exp").addEventListener("click",exportData);
-document.getElementById("imp").addEventListener("change",e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=""});
 ["q","fCountry"].forEach(id=>document.getElementById(id).addEventListener("input",renderBoard));
 document.getElementById("fBucket").addEventListener("change",e=>{filterBucket=e.target.value;renderSummary();renderBoard()});
 
 function route(){
-  const hs=location.hash;
-  const v=hs==="#colleges"?"colleges":/^#college-/.test(hs)?"college":"deadlines";
+  const h=location.hash;
+  const v=h==="#colleges"?"colleges":/^#college-/.test(h)?"college":"deadlines";
   document.getElementById("v-deadlines").hidden=v!=="deadlines";
   document.getElementById("v-colleges").hidden=v!=="colleges";
   document.getElementById("v-college").hidden=v!=="college";
@@ -407,17 +346,14 @@ function route(){
 }
 window.addEventListener("hashchange",route);
 
-/* ---------- boot ---------- */
-fetch("colleges.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
-  DATA=d;
-  COURSES=d.colleges.flatMap(col=>col.courses.map(c=>Object.assign({},c,{college:col})));
-  document.getElementById("meta").textContent=`CS, Data Science & AI · ${d.batch} · data checked ${fmt(d.updated)}`;
-  document.getElementById("srcnote").textContent=d.rankNote+" Admission details, deadlines and fees come only from each university's official website. Dates are shown in your local calendar; check each course page for the closing time and time zone. Your tracker is saved in this browser: use Export and Import to move it to another device.";
+fetch("colleges.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
+  DATA=d;COURSES=d.colleges.flatMap(col=>col.courses.map(c=>Object.assign({},c,{college:col})));
+  document.getElementById("meta").textContent=`CS, Data Science & AI · ${d.batch} · checked ${fmt(d.updated)}`;
+  document.getElementById("srcnote").textContent=d.rankNote+" Admission details, deadlines and fees come only from each university's official website. Your status and applied dates are saved in this browser.";
   const fc=document.getElementById("fCountry");[...new Set(d.colleges.map(c=>c.country))].forEach(c=>fc.insertAdjacentHTML("beforeend",`<option>${esc(c)}</option>`));
-  TRACK=lsLoad();route();renderAll();if(!Object.keys(TRACK).length){}
+  route();renderAll();
 }).catch(e=>{document.getElementById("board").innerHTML=`<p class="empty">The college data didn't load (${esc(e.message)}). Reload the page to try again.</p>`});
 })();
 </script>
-
 </body>
 </html>

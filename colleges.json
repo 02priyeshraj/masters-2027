@@ -2,11 +2,6 @@
 "updated": "2026-11-27",
 "batch": "QS 2027 ranks 1-10",
 "rankNote": "Overall: QS World University Rankings 2027. Subjects: QS Rankings by Subject 2026.",
-"continents": [
-"North America",
-"Europe",
-"Asia"
-],
 "colleges": [
 {
 "id": "mit",
@@ -14,24 +9,30 @@
 "short": "MIT",
 "city": "Cambridge, MA",
 "country": "USA",
-"continent": "North America",
+"route": "PhD only",
 "rank": {
 "overall": "1",
 "dsai": "1",
 "cs": "1"
 },
-"route": "PhD only",
-"general": [
+"links": [
 {
-"t": "IELTS 7.0 or TOEFL iBT 100 for EECS (IELTS preferred); GRE not required",
-"u": "https://oge.mit.edu/programs/electrical-engineering-and-computer-science/"
+"t": "EECS Admission Process",
+"u": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/"
+},
+{
+"t": "EECS Admission FAQs",
+"u": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/"
+},
+{
+"t": "Graduate Tuition",
+"u": "https://registrar.mit.edu/registration-academics/tuition-fees/graduate"
 }
 ],
 "courses": [
 {
 "id": "mit-eecs",
 "name": "EECS PhD (SM earned on the way)",
-"url": "https://oge.mit.edu/programs/electrical-engineering-and-computer-science/",
 "deg": "PhD",
 "deadlines": [
 {
@@ -39,30 +40,27 @@
 "d": "2026-12-01"
 }
 ],
-"req": [
+"links": [
 {
-"t": "No terminal master's: applications are for the doctoral programme only",
-"u": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/"
-},
-{
-"t": "IELTS 7.0 or TOEFL iBT 100; waiver may be available",
+"t": "Programme Details & Requirements",
 "u": "https://oge.mit.edu/programs/electrical-engineering-and-computer-science/"
 }
-]
+],
+"note": "EECS funds its PhD students: full tuition, a monthly stipend and medical insurance."
 },
 {
 "id": "mit-cse",
 "name": "Computational Science & Engineering SM",
-"url": "https://cse.mit.edu/programs-admissions/cse-sm/",
 "deg": "SM",
 "deadlines": [],
-"req": [
+"links": [
 {
-"t": "External admission is currently paused",
+"t": "Course Details",
 "u": "https://cse.mit.edu/programs-admissions/cse-sm/"
 }
 ],
-"tag": "Paused"
+"note": "External admission is paused.",
+"tag": "Admission paused"
 }
 ],
 "fees": {
@@ -82,15 +80,15 @@
 ],
 "links": [
 {
-"t": "MIT graduate tuition",
+"t": "Graduate Tuition",
 "u": "https://registrar.mit.edu/registration-academics/tuition-fees/graduate"
 }
 ],
 "foot": "2027-28 rates not published yet."
 },
 "notes": [
-"No master's in CS, Data Science or AI is open to external applicants for 2027. The only route is the EECS PhD, closing 1 Dec 2026.",
-"EECS PhD students are funded with full tuition, a monthly stipend and medical insurance."
+"MIT has no master's in CS, Data Science or AI open to outside applicants for 2027. EECS admits to the PhD only and awards the SM along the way.",
+"The EECS admissions page labels its 1 Dec 2026 deadline as for 'September 2026' entry; MIT's graduate office lists the deadline as 1 December, so treat it as the Fall 2027 deadline."
 ]
 },
 {
@@ -99,27 +97,29 @@
 "short": "Stanford",
 "city": "Stanford, CA",
 "country": "USA",
-"continent": "North America",
 "rank": {
 "overall": "=2",
 "dsai": "2",
 "cs": "2"
 },
-"general": [
+"links": [
 {
-"t": "US bachelor's or its international equivalent from a recognised university",
+"t": "Eligibility (International Degrees)",
 "u": "https://gradadmissions.stanford.edu/apply/eligibility"
 },
 {
-"t": "TOEFL 90 (4.5 on the 2026 scale) or IELTS 7.0 minimum, unless your degree was taught fully in English",
+"t": "English & GRE Test Scores",
 "u": "https://gradadmissions.stanford.edu/apply/test-scores"
+},
+{
+"t": "2026-27 Tuition Rates",
+"u": "https://studentservices.stanford.edu/tuition-rates/2026-2027-graduate-and-professional-tuition-rates"
 }
 ],
 "courses": [
 {
 "id": "stan-cs",
 "name": "MS Computer Science",
-"url": "https://www.cs.stanford.edu/masters-program-overview",
 "deg": "MS",
 "deadlines": [
 {
@@ -127,25 +127,28 @@
 "d": "2026-12-08"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Strong quantitative background; a CS bachelor's is not required",
+"t": "Course Details",
+"u": "https://www.cs.stanford.edu/masters-program-overview"
+},
+{
+"t": "Admission Requirements",
 "u": "https://www.cs.stanford.edu/admissions/masters-admissions"
 },
 {
-"t": "GRE not required; 3 recommendation letters; SOP up to 2 pages; resume",
+"t": "Application Checklist",
 "u": "https://www.cs.stanford.edu/admissions/graduate-application-checklists"
 },
 {
-"t": "Application fee $125",
-"u": "https://www.cs.stanford.edu/admissions/graduate-application-checklists"
+"t": "Deadlines",
+"u": "https://www.cs.stanford.edu/admissions-graduate-application-deadlines"
 }
 ]
 },
 {
 "id": "stan-stats",
 "name": "MS Statistics (Data Science track)",
-"url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum",
 "deg": "MS",
 "deadlines": [
 {
@@ -153,25 +156,25 @@
 "d": "2027-01-07"
 }
 ],
-"req": [
+"links": [
 {
-"t": "GRE General Test required",
+"t": "Course Details",
+"u": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+},
+{
+"t": "Requirements & How to Apply",
 "u": "https://statistics.stanford.edu/msadmissions/external-appl/applying-ms"
 },
 {
-"t": "Prerequisites: multivariable calculus and linear algebra, programming, intermediate statistics and probability",
-"u": "https://statistics.stanford.edu/msadmissions/external-appl/applying-ms"
-},
-{
-"t": "3 recommendation letters and a personal statement",
-"u": "https://statistics.stanford.edu/msadmissions/external-appl/applying-ms"
+"t": "Admissions FAQ",
+"u": "https://statistics.stanford.edu/msadmissions/ms-admissions-faq"
 }
-]
+],
+"note": "The department says it offers no financial aid or scholarships for the MS."
 },
 {
 "id": "stan-icme",
 "name": "MS Computational & Mathematical Engineering (Data Science track)",
-"url": "https://icme.stanford.edu/academics-admission/icme-master-science",
 "deg": "MS",
 "deadlines": [
 {
@@ -179,20 +182,21 @@
 "d": "2027-01-29"
 }
 ],
-"req": [
+"links": [
 {
-"t": "GRE not accepted",
+"t": "Course Details",
+"u": "https://icme.stanford.edu/academics-admission/icme-master-science"
+},
+{
+"t": "Admissions FAQ",
 "u": "https://icme.stanford.edu/academics-admission/admissions-application-faq"
 },
 {
-"t": "Strong applied maths: linear algebra, probability, PDEs, stochastics, programming",
-"u": "https://icme.stanford.edu/academics-admission/admissions-application-faq"
-},
-{
-"t": "3 recommendation letters, at least one academic",
-"u": "https://icme.stanford.edu/academics-admission/admissions-application-faq"
+"t": "Deadlines",
+"u": "https://icme.stanford.edu/academics-admission/icme-application-deadlines"
 }
-]
+],
+"note": "ICME says its Data Science track and the Statistics MS are designed to be identical."
 }
 ],
 "fees": {
@@ -211,19 +215,24 @@
 "Tuition, 8-10 units (per quarter)",
 "$15,100",
 "$14,180"
+],
+[
+"Application fee (CS)",
+"$125",
+"-"
 ]
 ],
 "links": [
 {
-"t": "2026-27 tuition rates",
+"t": "2026-27 Tuition Rates",
 "u": "https://studentservices.stanford.edu/tuition-rates/2026-2027-graduate-and-professional-tuition-rates"
 }
 ],
-"foot": "Full-time study is usually 3 quarters a year. 2027-28 rates not published yet."
+"foot": "Full-time study is usually three quarters a year. 2027-28 rates not published yet."
 },
 "notes": [
-"You may apply to only one Stanford graduate programme per year, so pick one of CS, Statistics or ICME.",
-"Autumn entry only; there is no spring 2027 intake for external MS applicants."
+"Stanford allows only one graduate application per year, so choose one of CS, Statistics or ICME.",
+"Autumn 2027 entry only for outside applicants; the spring dates on these pages are for current Stanford students."
 ]
 },
 {
@@ -232,31 +241,25 @@
 "short": "Harvard",
 "city": "Cambridge, MA",
 "country": "USA",
-"continent": "North America",
 "rank": {
 "overall": "5",
 "dsai": "8",
 "cs": "7"
 },
-"general": [
+"links": [
 {
-"t": "TOEFL iBT or IELTS, unless your bachelor's was taught in English; Duolingo not accepted",
-"u": "https://seas.harvard.edu/masters-data-science/how-apply"
+"t": "GSAS Application Instructions",
+"u": "https://gsas.harvard.edu/apply/applying-degree-programs"
 },
 {
-"t": "3- or 4-year bachelor's from a recognised institution; no GPA cutoff",
-"u": "https://seas.harvard.edu/masters-data-science/how-apply"
-},
-{
-"t": "GRE optional; 3 recommendation letters; SOP about 1,000 words; CV",
-"u": "https://seas.harvard.edu/masters-data-science/how-apply"
+"t": "Cost of Attendance 2026-27",
+"u": "https://gsas.harvard.edu/apply/cost-attendance-2026-2027"
 }
 ],
 "courses": [
 {
 "id": "harv-ds",
 "name": "SM Data Science",
-"url": "https://seas.harvard.edu/masters-data-science",
 "deg": "SM",
 "deadlines": [
 {
@@ -264,17 +267,24 @@
 "d": "2026-12-01"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Working knowledge of calculus, linear algebra, probability and statistics, and Python or R",
+"t": "Course Details",
+"u": "https://seas.harvard.edu/masters-data-science"
+},
+{
+"t": "Requirements & How to Apply",
 "u": "https://seas.harvard.edu/masters-data-science/how-apply"
+},
+{
+"t": "Degree Requirements",
+"u": "https://seas.harvard.edu/masters-data-science/degree-requirements"
 }
 ]
 },
 {
 "id": "harv-cse-sm",
 "name": "SM Computational Science & Engineering",
-"url": "https://seas.harvard.edu/masters-computational-science-and-engineering",
 "deg": "SM",
 "deadlines": [
 {
@@ -282,17 +292,24 @@
 "d": "2026-12-01"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Working knowledge of calculus, linear algebra, differential equations and programming",
+"t": "Course Details",
+"u": "https://seas.harvard.edu/masters-computational-science-and-engineering"
+},
+{
+"t": "Requirements & How to Apply",
 "u": "https://seas.harvard.edu/masters-computational-science-and-engineering/how-apply"
+},
+{
+"t": "Degree Requirements",
+"u": "https://seas.harvard.edu/masters-computational-science-and-engineering/degree-requirements"
 }
 ]
 },
 {
 "id": "harv-cse-me",
 "name": "ME Computational Science & Engineering (2 years)",
-"url": "https://seas.harvard.edu/masters-computational-science-and-engineering",
 "deg": "ME",
 "deadlines": [
 {
@@ -300,12 +317,21 @@
 "d": "2026-12-01"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Same preparation as the SM, with a two-year research component",
+"t": "Course Details",
+"u": "https://seas.harvard.edu/masters-computational-science-and-engineering"
+},
+{
+"t": "Requirements & How to Apply",
 "u": "https://seas.harvard.edu/masters-computational-science-and-engineering/how-apply"
+},
+{
+"t": "Degree Requirements",
+"u": "https://seas.harvard.edu/masters-computational-science-and-engineering/degree-requirements"
 }
-]
+],
+"note": "The ME shares its pages with the SM; the two differ in length and research component."
 }
 ],
 "fees": {
@@ -343,15 +369,15 @@
 ],
 "links": [
 {
-"t": "Cost of attendance 2026-27",
+"t": "Cost of Attendance 2026-27",
 "u": "https://gsas.harvard.edu/apply/cost-attendance-2026-2027"
 }
 ],
 "foot": "2027-28 rates not published yet."
 },
 "notes": [
-"SEAS master's students are not eligible for SEAS financial aid, so plan for loans, savings or outside scholarships.",
-"Fall entry only, single deadline of 1 Dec 2026, and no late applications."
+"SEAS master's students cannot get financial aid from SEAS; plan for loans, savings or outside scholarships.",
+"Fall entry only with one deadline (1 Dec 2026) and no late applications. Harvard accepts up to three applications to different programmes per year."
 ]
 },
 {
@@ -360,24 +386,30 @@
 "short": "Caltech",
 "city": "Pasadena, CA",
 "country": "USA",
-"continent": "North America",
+"route": "PhD only",
 "rank": {
 "overall": "7",
 "dsai": "Not ranked",
 "cs": "40"
 },
-"route": "PhD only",
-"general": [
+"links": [
 {
-"t": "English test not required but recommended if your degree was not taught in English",
+"t": "Applicant FAQs",
 "u": "https://gradoffice.caltech.edu/admissions/faq-applicants"
+},
+{
+"t": "Deadlines by Programme (PDF)",
+"u": "https://gradoffice.caltech.edu/documents/35494/UPDATED_Application_Deadlines_2026-27.pdf"
+},
+{
+"t": "Estimated Budget",
+"u": "https://gradoffice.caltech.edu/financialsupport/budget"
 }
 ],
 "courses": [
 {
 "id": "cal-cs",
 "name": "PhD Computer Science / CMS",
-"url": "https://www.cms.caltech.edu/academics/grad",
 "deg": "PhD",
 "deadlines": [
 {
@@ -385,17 +417,13 @@
 "d": "2026-12-15"
 }
 ],
-"req": [
+"links": [
 {
-"t": "No terminal master's in CS; admission is to the PhD",
+"t": "Programme Details & FAQs",
 "u": "https://www.cms.caltech.edu/academics/grad"
 },
 {
-"t": "GRE not required for 2026-27 applications",
-"u": "https://www.cms.caltech.edu/academics/grad"
-},
-{
-"t": "Application fee $100",
+"t": "Apply Online",
 "u": "https://gradoffice.caltech.edu/admissions/applyonline"
 }
 ]
@@ -422,15 +450,15 @@
 ],
 "links": [
 {
-"t": "Caltech estimated budget",
+"t": "Estimated Budget",
 "u": "https://gradoffice.caltech.edu/financialsupport/budget"
 }
 ],
 "foot": "2027-28 rates not published yet."
 },
 "notes": [
-"Only the PhD is open; Caltech says more than 98% of admitted graduate students get full tuition plus a stipend.",
-"Fall entry only; CS deadline 15 Dec 2026."
+"Caltech CS has no terminal master's; you would apply to the PhD.",
+"Caltech says more than 98% of admitted graduate students receive full tuition plus a stipend."
 ]
 },
 {
@@ -439,23 +467,30 @@
 "short": "Imperial",
 "city": "London",
 "country": "UK",
-"continent": "Europe",
 "rank": {
 "overall": "=2",
 "dsai": "=15",
 "cs": "12"
 },
-"general": [
+"links": [
 {
-"t": "India first class: 70% or 8.0/10 (institutes of national importance and listed universities), 75% or 8.5/10 (others)",
-"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/entry-requirements/accepted-qualifications/"
+"t": "Indian Qualifications",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/entry-requirements/accepted-qualifications/#tabpanel_1278300"
 },
 {
-"t": "India 2:1: 65% or 7.5/10 (listed), 70% or 8.0/10 (others)",
-"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/entry-requirements/accepted-qualifications/"
+"t": "English Requirements (IELTS)",
+"u": "https://www.imperial.ac.uk/study/apply/english-language/#tabpanel_1236863"
 },
 {
-"t": "Application fee £90 per application (up to two courses)",
+"t": "Application Rounds & Deadlines",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/deadlines/"
+},
+{
+"t": "Personal Statement",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/personal-statement/"
+},
+{
+"t": "Application Fee",
 "u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/application-fee/"
 }
 ],
@@ -463,7 +498,6 @@
 {
 "id": "imp-advanced-computing",
 "name": "Advanced Computing",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/advanced-computing/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -479,21 +513,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class honours with a substantial computing component",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/advanced-computing/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/advanced-computing/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/advanced-computing/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/advanced-computing/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-computing",
-"name": "Computing (non-CS background)",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing/",
+"name": "Computing (for non-CS graduates)",
 "deg": "MSc",
 "deadlines": [
 {
@@ -509,21 +550,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree in a subject without substantial computing, plus good maths",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-computing-artificial-intelligence-msc",
 "name": "Computing (AI & Machine Learning)",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-artificial-intelligence-msc/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -539,21 +587,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class honours with a substantial computing component",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-artificial-intelligence-msc/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-artificial-intelligence-msc/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-artificial-intelligence-msc/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-artificial-intelligence-msc/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-computing-software-engineering-msc",
 "name": "Computing (Software Engineering)",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-software-engineering-msc/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -569,21 +624,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree with computing close to Imperial's first two undergraduate years",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-software-engineering-msc/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-software-engineering-msc/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-software-engineering-msc/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-software-engineering-msc/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-computing-security-reliability-msc",
 "name": "Computing (Security & Reliability)",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-security-reliability-msc/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -599,21 +661,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree with computing close to Imperial's first two undergraduate years",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-security-reliability-msc/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-security-reliability-msc/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-security-reliability-msc/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-security-reliability-msc/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-computing-visual-computing-robotics-msc",
 "name": "Computing (Visual Computing & Robotics)",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-visual-computing-robotics-msc/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -629,21 +698,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree with substantial computing and maths content",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-visual-computing-robotics-msc/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-visual-computing-robotics-msc/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-visual-computing-robotics-msc/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/computing-visual-computing-robotics-msc/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-artificial-intelligence",
-"name": "Artificial Intelligence",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence/",
+"name": "Artificial Intelligence (for maths-heavy non-CS graduates)",
 "deg": "MSc",
 "deadlines": [
 {
@@ -659,21 +735,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree in Maths, Physics, Engineering, Economics or similar; little or no computing background",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-applications-innovation",
 "name": "AI Applications & Innovation",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applications-innovation/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -689,21 +772,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class honours in a STEM-strong subject, with linear algebra, statistics and some programming",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applications-innovation/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applications-innovation/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applications-innovation/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applications-innovation/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-applied-machine-learning",
 "name": "Applied Machine Learning",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-machine-learning/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -719,21 +809,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class honours in Electrical/Electronic Engineering or a related subject",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-machine-learning/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-machine-learning/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-machine-learning/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-machine-learning/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-applied-computational-science",
 "name": "Applied Computational Science & Engineering",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-computational-science/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -749,21 +846,28 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in Engineering or a science subject",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-computational-science/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-computational-science/#course-entry-requirements-id"
 },
 {
-"t": "English: standard level, IELTS 6.5 overall (6.0 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-computational-science/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/applied-computational-science/#course-tuition-fees-id"
 }
 ]
 },
 {
 "id": "imp-artificial-intelligence-machine-learning",
 "name": "AI & Machine Learning",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence-machine-learning/",
 "deg": "MRes",
 "deadlines": [
 {
@@ -779,25 +883,29 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class honours in Computing, Engineering, Maths, Statistics or Physics",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence-machine-learning/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence-machine-learning/#course-entry-requirements-id"
 },
 {
-"t": "English: standard level, IELTS 6.5 overall (6.0 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence-machine-learning/#course-how-to-apply-id"
 },
 {
-"t": "ATAS certificate needed for the visa (India is not exempt)",
-"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence-machine-learning/"
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/artificial-intelligence-machine-learning/#course-tuition-fees-id"
 }
-]
+],
+"note": "Needs an ATAS certificate before the visa; India is not on the exempt list."
 },
 {
 "id": "imp-statistics-data-science",
 "name": "Statistics (Data Science & Machine Learning)",
-"url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/statistics-data-science/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -813,16 +921,25 @@
 "d": "2027-04-28"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in Statistics, Maths, Engineering, Physics or CS; nearly all admits hold a First",
+"t": "Course Details",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/statistics-data-science/"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/statistics-data-science/#course-entry-requirements-id"
 },
 {
-"t": "English: higher level, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/"
+"t": "How to Apply",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/statistics-data-science/#course-how-to-apply-id"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/2027/statistics-data-science/#course-tuition-fees-id"
 }
-]
+],
+"note": "Imperial says nearly all successful applicants hold a First."
 }
 ],
 "fees": {
@@ -848,15 +965,16 @@
 ],
 "links": [
 {
-"t": "Application fee",
+"t": "Application Fee",
 "u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/application-fee/"
 }
 ],
 "foot": "One-year full-time courses starting October 2027."
 },
 "notes": [
-"Apply by Round 2 (6 Jan 2027): Imperial does not guarantee places will still be open in Rounds 3 and 4.",
-"One application per year with up to two courses. Only the MRes AI & ML needs ATAS."
+"Apply by Round 2 (6 Jan 2027): Imperial says places and courses are not guaranteed in later rounds, and some courses close early.",
+"One application per year with up to two course choices; the second choice is only reviewed if the first is unsuccessful or waitlisted.",
+"References can arrive shortly after the round closes. Visa applicants are advised to apply by 18 June 2027 at the latest."
 ]
 },
 {
@@ -865,27 +983,29 @@
 "short": "Oxford",
 "city": "Oxford",
 "country": "UK",
-"continent": "Europe",
 "rank": {
 "overall": "4",
 "dsai": "=6",
 "cs": "=4"
 },
-"general": [
+"links": [
 {
-"t": "India first class: 65% (institutions of national importance) or 75% (others), or CGPA 8.5/10, for a 4-year degree",
-"u": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifications"
+"t": "Indian Qualifications",
+"u": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifications#i"
 },
 {
-"t": "Application fee £75 per course",
-"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science"
+"t": "English Language Proficiency",
+"u": "https://www.ox.ac.uk/admissions/graduate/application-guide/qualifications-experience-languages-funding/english-language-proficiency"
+},
+{
+"t": "Living Costs",
+"u": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/living-costs"
 }
 ],
 "courses": [
 {
 "id": "ox-acs",
 "name": "MSc Advanced Computer Science",
-"url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science",
 "deg": "MSc",
 "deadlines": [
 {
@@ -893,25 +1013,28 @@
 "d": "2027-01-06"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree in computer science or maths; programming projects expected",
+"t": "Course Details",
 "u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science"
 },
 {
-"t": "English higher level: IELTS 7.5 (7.0 each), TOEFL iBT 110",
-"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science"
+"t": "Entry Requirements",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science#entry-requirements"
 },
 {
-"t": "3 referees, SOP up to 1,000 words, CV, transcripts; no GRE",
-"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science"
+"t": "Application Documents",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science#completing-your-application"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-advanced-computer-science#funding-and-costs"
 }
 ]
 },
 {
 "id": "ox-mfocs",
 "name": "MSc Mathematics & Foundations of Computer Science",
-"url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-mathematics-and-foundations-of-computer-science",
 "deg": "MSc",
 "deadlines": [
 {
@@ -919,21 +1042,28 @@
 "d": "2027-01-27"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree in a subject with significant mathematical content",
+"t": "Course Details",
 "u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-mathematics-and-foundations-of-computer-science"
 },
 {
-"t": "English higher level; 3 referees (at least two academic); SOP up to 1,000 words; no GRE",
-"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-mathematics-and-foundations-of-computer-science"
+"t": "Entry Requirements",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-mathematics-and-foundations-of-computer-science#entry-requirements"
+},
+{
+"t": "Application Documents",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-mathematics-and-foundations-of-computer-science#completing-your-application"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-mathematics-and-foundations-of-computer-science#funding-and-costs"
 }
 ]
 },
 {
 "id": "ox-sds",
 "name": "MSc Social Data Science",
-"url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-social-data-science",
 "deg": "MSc",
 "deadlines": [
 {
@@ -945,16 +1075,25 @@
 "d": "2027-01-07"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree in any subject, plus calculus and matrix algebra aptitude",
+"t": "Course Details",
 "u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-social-data-science"
 },
 {
-"t": "English higher level; 3 referees; one written essay up to 2,000 words; no GRE",
-"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-social-data-science"
+"t": "Entry Requirements",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-social-data-science#entry-requirements"
+},
+{
+"t": "Application Documents",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-social-data-science#completing-your-application"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ox.ac.uk/admissions/graduate/courses/msc-social-data-science#funding-and-costs"
 }
-]
+],
+"note": "The early deadline only meant an earlier decision; the 7 Jan deadline is still open."
 }
 ],
 "fees": {
@@ -978,12 +1117,16 @@
 "£75"
 ]
 ],
-"links": [],
-"foot": "Fees are charged per year; all three courses are 12 months full-time."
+"links": [
+{
+"t": "Living Costs",
+"u": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/living-costs"
+}
+],
+"foot": "Charged per year; all three are 12-month full-time courses."
 },
 "notes": [
-"Social Data Science's early deadline (13 Nov) has passed; applying by 7 Jan still counts, with later decisions.",
-"October 2027 start only. Oxford's part-time Software Engineering and Security MScs are left out because they do not lead to a student visa."
+"October 2027 start only. Oxford's part-time Software Engineering and Software & Systems Security MScs are left out because they don't lead to a student visa."
 ]
 },
 {
@@ -992,19 +1135,26 @@
 "short": "Cambridge",
 "city": "Cambridge",
 "country": "UK",
-"continent": "Europe",
 "rank": {
 "overall": "6",
 "dsai": "9",
 "cs": "8"
 },
-"general": [
+"links": [
 {
-"t": "India (4-year degree): 2:1 = 70% or 7.3/10, High 2:1 = 73% or 7.7/10, First = 75% or 8.0/10",
+"t": "Indian Qualifications",
 "u": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications"
 },
 {
-"t": "Application fee £85 per course",
+"t": "English Language Requirements",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/before/english-language-requirements"
+},
+{
+"t": "References Guidance",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/how/references"
+},
+{
+"t": "Application Fee",
 "u": "https://www.postgraduate.study.cam.ac.uk/apply/how/application-fee"
 }
 ],
@@ -1012,11 +1162,10 @@
 {
 "id": "cam-acs",
 "name": "MPhil Advanced Computer Science",
-"url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscsmpacs",
 "deg": "MPhil",
 "deadlines": [
 {
-"l": "January-interview round",
+"l": "January interview round",
 "d": "2026-12-08"
 },
 {
@@ -1024,25 +1173,29 @@
 "d": "2027-02-25"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree in CS (or numerate subject with strong coding)",
+"t": "Course Details",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscsmpacs"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscsmpacs/requirements"
 },
 {
-"t": "IELTS 7.5 overall (7.0 each) or TOEFL 107 (25 each)",
-"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscsmpacs/requirements"
-},
-{
-"t": "2 references, CV, transcript, module choice and a research proposal up to 400 words",
+"t": "How to Apply",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscsmpacs/apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/cscsmpacs/finance"
 }
-]
+],
+"note": "Applications by 8 Dec can be interviewed in January; later ones are interviewed in April."
 },
 {
 "id": "cam-mlmi",
 "name": "MPhil Machine Learning & Machine Intelligence",
-"url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl",
 "deg": "MPhil",
 "deadlines": [
 {
@@ -1050,25 +1203,29 @@
 "d": "2026-12-08"
 }
 ],
-"req": [
+"links": [
 {
-"t": "First-class degree with strong engineering, maths and computing skills",
+"t": "Course Details",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl/requirements"
 },
 {
-"t": "IELTS 7.0 or TOEFL 100",
-"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl/requirements"
-},
-{
-"t": "2 references (one may be professional), CV, transcript; choose a pathway",
+"t": "How to Apply",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl/apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmsl/finance"
 }
-]
+],
+"note": "One of the two references may be professional."
 },
 {
 "id": "cam-hiai",
 "name": "MPhil Human-Inspired Artificial Intelligence",
-"url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia",
 "deg": "MPhil",
 "deadlines": [
 {
@@ -1076,25 +1233,28 @@
 "d": "2026-12-08"
 }
 ],
-"req": [
+"links": [
 {
-"t": "High 2:1 with computational, maths and programming preparation",
+"t": "Course Details",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia/requirements"
 },
 {
-"t": "IELTS 7.5 or TOEFL 110",
-"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia/requirements"
-},
-{
-"t": "2 references; relevant experience (2,000 characters) and reasons for applying (1,500 characters)",
+"t": "How to Apply",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia/apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia/finance"
 }
 ]
 },
 {
 "id": "cam-dis",
 "name": "MPhil Data Intensive Science",
-"url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpdis",
 "deg": "MPhil",
 "deadlines": [
 {
@@ -1106,25 +1266,29 @@
 "d": "2027-05-13"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Good 2:1 in science or technology, with linear algebra, calculus and statistics",
+"t": "Course Details",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpdis"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpdis/requirements"
 },
 {
-"t": "IELTS 7.0 or TOEFL 100",
-"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpdis/requirements"
-},
-{
-"t": "2 references; statement of interest and career goals (1,500 characters each)",
+"t": "How to Apply",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpdis/apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpdis/finance"
 }
-]
+],
+"note": "Applications are reviewed on a rolling basis from January."
 },
 {
 "id": "cam-sc",
 "name": "MPhil Scientific Computing",
-"url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpscm",
 "deg": "MPhil",
 "deadlines": [
 {
@@ -1136,20 +1300,25 @@
 "d": "2027-05-13"
 }
 ],
-"req": [
+"links": [
 {
-"t": "High 2:1 in science or technology; able to code scientific applications",
+"t": "Course Details",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpscm"
+},
+{
+"t": "Entry Requirements",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpscm/requirements"
 },
 {
-"t": "IELTS 7.0 or TOEFL 100",
-"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpscm/requirements"
-},
-{
-"t": "2 references, statement of interest, 2 samples of work; interview",
+"t": "How to Apply",
 "u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpscm/apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.postgraduate.study.cam.ac.uk/courses/directory/pcphmpscm/finance"
 }
-]
+],
+"note": "Rolling admissions; shortlisted candidates are interviewed."
 }
 ],
 "fees": {
@@ -1189,15 +1358,14 @@
 ],
 "links": [
 {
-"t": "Application fee",
+"t": "Application Fee",
 "u": "https://www.postgraduate.study.cam.ac.uk/apply/how/application-fee"
 }
 ],
-"foot": "Tuition and maintenance from each course's fee calculator, overseas status."
+"foot": "From each course's fee calculator, overseas status."
 },
 "notes": [
-"Advanced CS: apply by 8 Dec 2026 for the January interview round; later applicants are interviewed in April.",
-"Applying by the 8 Dec funding deadline (6 Jan for Scientific Computing) puts you in the Cambridge scholarship competitions."
+"Applying by the course funding deadline (8 Dec 2026; 6 Jan 2027 for Scientific Computing) is what puts you in the Cambridge scholarship competitions, including Gates Cambridge."
 ]
 },
 {
@@ -1206,306 +1374,348 @@
 "short": "UCL",
 "city": "London",
 "country": "UK",
-"continent": "Europe",
 "rank": {
 "overall": "=8",
 "dsai": "22",
 "cs": "20"
 },
-"general": [
+"links": [
 {
-"t": "India 2:1: CGPA 7.5/10 or 60%; the mark needed depends on your institution's ranking",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc"
+"t": "English Language Requirements",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
 },
 {
-"t": "Up to 2 graduate applications per cycle; application fee £90",
+"t": "Selecting Your References",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/selecting-your-references"
+},
+{
+"t": "Application Fees",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/application-fees"
+},
+{
+"t": "Tuition Fees & Deposits",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/funding-your-masters/tuition-fees"
 }
 ],
 "courses": [
 {
 "id": "ucl-machine-learning-msc",
 "name": "Machine Learning",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in a highly quantitative subject; comfortable with linear algebra and calculus",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/machine-learning-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-computational-statistics-and-machine-learning-msc",
 "name": "Computational Statistics & Machine Learning",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computational-statistics-and-machine-learning-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in a highly quantitative subject; intermediate statistics, linear algebra, multivariable calculus",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computational-statistics-and-machine-learning-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computational-statistics-and-machine-learning-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computational-statistics-and-machine-learning-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computational-statistics-and-machine-learning-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computational-statistics-and-machine-learning-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-data-science-and-machine-learning-msc",
 "name": "Data Science & Machine Learning",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-and-machine-learning-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in a quantitative subject; first-year university linear algebra, calculus, probability, statistics",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-and-machine-learning-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-and-machine-learning-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-and-machine-learning-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-and-machine-learning-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-and-machine-learning-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-artificial-intelligence-and-data-engineering-msc",
 "name": "AI & Data Engineering",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/artificial-intelligence-and-data-engineering-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in CS, computing or software engineering, with data systems, AI and maths",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/artificial-intelligence-and-data-engineering-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/artificial-intelligence-and-data-engineering-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/artificial-intelligence-and-data-engineering-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/artificial-intelligence-and-data-engineering-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/artificial-intelligence-and-data-engineering-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-data-science-msc",
 "name": "Data Science",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in a quantitative discipline; must already program in R, MATLAB or Python",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-msc"
 },
 {
-"t": "English: Level 1, IELTS 6.5 overall (6.0 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-msc#entry-requirements"
 },
 {
-"t": "1 reference required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/data-science-msc#fees-funding"
 }
-]
+],
+"note": "Asks for one reference only; the other UCL courses here ask for two."
 },
 {
 "id": "ucl-computer-science-msc",
-"name": "Computer Science (non-CS background)",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-science-msc",
+"name": "Computer Science (for non-CS graduates)",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in a subject other than CS or IT (AI, ML and SE degrees also excluded); maths to A-level",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-science-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-science-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-science-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-science-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-science-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-software-systems-engineering-msc",
 "name": "Software Systems Engineering",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/software-systems-engineering-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in CS, computing or software engineering; page also lists 'Other requirements: minimum of 2 years'",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/software-systems-engineering-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/software-systems-engineering-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/software-systems-engineering-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/software-systems-engineering-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/software-systems-engineering-msc#fees-funding"
 }
-]
+],
+"note": "Its entry section says only 'Other requirements: Minimum of 2 years' without saying of what; ask the department before applying."
 },
 {
 "id": "ucl-information-security-msc",
 "name": "Information Security",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/information-security-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in CS, electrical engineering or maths",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/information-security-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/information-security-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/information-security-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/information-security-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/information-security-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-robotics-and-artificial-intelligence-msc",
 "name": "Robotics & AI",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/robotics-and-artificial-intelligence-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in a quantitative subject; calculus, linear algebra and probability",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/robotics-and-artificial-intelligence-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/robotics-and-artificial-intelligence-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/robotics-and-artificial-intelligence-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/robotics-and-artificial-intelligence-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/robotics-and-artificial-intelligence-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-computer-graphics-vision-and-imaging-msc",
 "name": "Computer Graphics, Vision & Imaging",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-graphics-vision-and-imaging-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-03-22"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2:1 in CS, maths, EE or physical sciences, with maths and programming",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-graphics-vision-and-imaging-msc"
 },
 {
-"t": "English: Level 2, IELTS 7.0 overall (6.5 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-graphics-vision-and-imaging-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-graphics-vision-and-imaging-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-graphics-vision-and-imaging-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/computer-graphics-vision-and-imaging-msc#fees-funding"
 }
 ]
 },
 {
 "id": "ucl-scientific-and-data-intensive-computing-msc",
 "name": "Scientific & Data Intensive Computing",
-"url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/scientific-and-data-intensive-computing-msc",
 "deg": "MSc",
 "deadlines": [
 {
-"l": "Closes (visa applicants)",
+"l": "Closes for visa applicants",
 "d": "2027-06-25"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Normally a first-class degree in science or engineering, with a strong interest in computing",
+"t": "Course Details",
 "u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/scientific-and-data-intensive-computing-msc"
 },
 {
-"t": "English: Level 1, IELTS 6.5 overall (6.0 in each part)",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+"t": "Entry Requirements (incl. India)",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/scientific-and-data-intensive-computing-msc#entry-requirements"
 },
 {
-"t": "2 references required",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/scientific-and-data-intensive-computing-msc"
+"t": "How to Apply",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/scientific-and-data-intensive-computing-msc#apply"
+},
+{
+"t": "Fees & Funding",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/scientific-and-data-intensive-computing-msc#fees-funding"
 }
 ]
 }
@@ -1523,7 +1733,7 @@
 "£44,400"
 ],
 [
-"Deposit on offer (overseas)",
+"Deposit on accepting offer",
 "10% of fee",
 "10% of fee"
 ],
@@ -1535,15 +1745,15 @@
 ],
 "links": [
 {
-"t": "Application fees",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/application-fees"
+"t": "Tuition Fees & Deposits",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/funding-your-masters/tuition-fees"
 }
 ],
-"foot": "Fees are fixed for the course length (cohort guarantee)."
+"foot": "Fees don't rise during the course (cohort guarantee)."
 },
 "notes": [
-"Visa applicants must apply by 22 Mar 2027 (25 Jun for Scientific & Data Intensive Computing), and Computer Science courses take no late applications.",
-"A 10% tuition deposit is due when you accept an offer as an overseas student."
+"You can apply to at most two UCL graduate courses per cycle.",
+"Computer Science department courses take no late applications; UCL advises visa and scholarship applicants to apply early."
 ]
 },
 {
@@ -1552,31 +1762,37 @@
 "short": "ETH Zürich",
 "city": "Zürich",
 "country": "Switzerland",
-"continent": "Europe",
 "rank": {
 "overall": "=8",
 "dsai": "11",
 "cs": "10"
 },
-"general": [
+"links": [
 {
-"t": "India: minimum average 8.8/10 for CS, Data Science and Cyber Security; below that there is no prospect of admission",
+"t": "Minimum Grade (India)",
 "u": "https://ethz.ch/en/studies/master/application/international-bachelor/prerequisites/minimum-grade-requirements.html"
 },
 {
-"t": "English at C1, or official proof that your whole bachelor's was taught in English",
+"t": "Language Requirements",
 "u": "https://ethz.ch/en/studies/master/application/language-requirements.html"
 },
 {
-"t": "Application fee CHF 150 per programme",
-"u": "https://ethz.ch/en/studies/master/application/international-bachelor/how-to-apply.html"
+"t": "General Application Documents",
+"u": "https://ethz.ch/en/studies/master/application/international-bachelor/application-documents/general-documents.html"
+},
+{
+"t": "Application Dates",
+"u": "https://ethz.ch/en/studies/master/application/dates.html"
+},
+{
+"t": "Tuition Fees",
+"u": "https://ethz.ch/students/en/studies/financial/tuition-fees.html"
 }
 ],
 "courses": [
 {
 "id": "eth-cs",
 "name": "MSc Computer Science",
-"url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/computer-science.html",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1584,13 +1800,17 @@
 "d": "2026-11-30"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2 recommendation letters (academic preferred) and a one-page motivation letter",
+"t": "Course Details",
+"u": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/computer-science.html"
+},
+{
+"t": "Programme Application Documents",
 "u": "https://ethz.ch/en/studies/master/application/master-informatik.html"
 },
 {
-"t": "Bachelor's must cover the CS requirement profile (max 30 ECTS of make-up)",
+"t": "Requirement Profile (PDF)",
 "u": "https://ethz.ch/content/dam/ethz/common/docs/master-profile/englisch/ingenieurwissenschaften/MSc-Computer-Science-Appendix.pdf"
 }
 ]
@@ -1598,7 +1818,6 @@
 {
 "id": "eth-ds",
 "name": "MSc Data Science",
-"url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/data-science.html",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1606,13 +1825,17 @@
 "d": "2026-11-30"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2 recommendation letters and a one-page motivation letter",
+"t": "Course Details",
+"u": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/data-science.html"
+},
+{
+"t": "Programme Application Documents",
 "u": "https://ethz.ch/en/studies/master/application/master-datascience.html"
 },
 {
-"t": "Bachelor's must cover the 76-ECTS Data Science requirement profile",
+"t": "Requirement Profile (PDF)",
 "u": "https://ethz.ch/content/dam/ethz/common/docs/master-profile/englisch/ingenieurwissenschaften/MSc-DataScience-Appendix.pdf"
 }
 ]
@@ -1620,7 +1843,6 @@
 {
 "id": "eth-cyber",
 "name": "MSc Cyber Security (joint with EPFL)",
-"url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/cyber-security.html",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1628,13 +1850,17 @@
 "d": "2026-11-30"
 }
 ],
-"req": [
+"links": [
 {
-"t": "2 recommendation letters and a one-page motivation letter",
+"t": "Course Details",
+"u": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences/cyber-security.html"
+},
+{
+"t": "Programme Application Documents",
 "u": "https://ethz.ch/en/studies/master/application/master-cybsec.html"
 },
 {
-"t": "Bachelor's must cover the Cyber Security requirement profile",
+"t": "Requirement Profile (PDF)",
 "u": "https://ethz.ch/content/dam/ethz/common/docs/master-profile/englisch/ingenieurwissenschaften/MSc%20Cyber%20Security%20Appendix_Regulations.pdf"
 }
 ]
@@ -1642,7 +1868,6 @@
 {
 "id": "eth-cse",
 "name": "MSc Computational Science & Engineering",
-"url": "https://rw.ethz.ch/the-programme/master.html",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1650,16 +1875,21 @@
 "d": "2026-11-30"
 }
 ],
-"req": [
+"links": [
 {
-"t": "GRE required for bachelor's degrees from outside the EU/EFTA",
+"t": "Course Details",
+"u": "https://rw.ethz.ch/the-programme/master.html"
+},
+{
+"t": "Programme Application Documents",
 "u": "https://ethz.ch/en/studies/master/application/master-rw.html"
 },
 {
-"t": "2 recommendation letters, motivation letter, and course-content summary on ETH's template",
-"u": "https://ethz.ch/en/studies/master/application/master-rw.html"
+"t": "Requirement Profile (PDF)",
+"u": "https://ethz.ch/content/dam/ethz/special-interest/study-programme-websites/ms-compsci-and-eng-dam/documents/master-programme/MSc_CSE-Requ_Profile-curr.pdf"
 }
-]
+],
+"note": "The only one of the four that asks for the GRE from non-EU/EFTA graduates, plus a course-content summary on ETH's template."
 }
 ],
 "fees": {
@@ -1683,19 +1913,20 @@
 ],
 "links": [
 {
-"t": "Tuition fees",
+"t": "Tuition Fees",
 "u": "https://ethz.ch/students/en/studies/financial/tuition-fees.html"
 },
 {
-"t": "Fee schedule (PDF)",
+"t": "Fee Schedule (PDF)",
 "u": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/tuition-fees.pdf"
 }
 ],
-"foot": "The Master's is typically 3-4 semesters."
+"foot": "Foreign students pay the threefold fee group from autumn 2025."
 },
 "notes": [
-"The only window for Indian bachelor's degrees is 1-30 Nov 2026 (11:59 AM CET); late or incomplete files are not processed and there is no spring entry.",
-"Applying for the ETH Excellence Scholarship (ESOP) also has to happen in this November window."
+"Bachelor's degrees from outside Switzerland can only apply in the 1-30 Nov 2026 window (11:59 AM CET). There is no spring entry, and late or incomplete files are not processed.",
+"ETH says applicants from India below the published minimum average have no prospect of success.",
+"The ETH Excellence Scholarship (ESOP) has to be applied for in this same November window."
 ]
 },
 {
@@ -1704,23 +1935,16 @@
 "short": "NUS",
 "city": "Singapore",
 "country": "Singapore",
-"continent": "Asia",
 "rank": {
 "overall": "10",
 "dsai": "3",
 "cs": "=4"
 },
-"general": [
-{
-"t": "MComp tracks accept GATE instead of GRE for Indian graduates",
-"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/admissions/"
-}
-],
+"links": [],
 "courses": [
 {
 "id": "nus-mcai",
 "name": "Master of Computing in Artificial Intelligence",
-"url": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/",
 "deg": "MComp",
 "deadlines": [
 {
@@ -1728,21 +1952,28 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Good honours degree in computing (or related degree with 2 years' IT experience)",
+"t": "Course Details",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/"
+},
+{
+"t": "Admission Requirements",
 "u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/admissions/"
 },
 {
-"t": "GRE 320 + AWA 3.5, GMAT 650, or GATE; TOEFL 90 (4.5) or IELTS 6.0",
-"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/admissions/"
+"t": "Application & Deadlines",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/application/"
+},
+{
+"t": "Fees",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-ai/scholarships/"
 }
 ]
 },
 {
 "id": "nus-mcs",
 "name": "MComp, Computer Science specialisation",
-"url": "https://www.comp.nus.edu.sg/programmes/pg/mcs/",
 "deg": "MComp",
 "deadlines": [
 {
@@ -1750,21 +1981,28 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Good honours degree in computing (or related degree with 2 years' IT experience)",
+"t": "Course Details",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcs/"
+},
+{
+"t": "Admission Requirements",
 "u": "https://www.comp.nus.edu.sg/programmes/pg/mcs/admissions/"
 },
 {
-"t": "GRE 320 + AWA 3.5, GMAT 650, or GATE; TOEFL 90 (4.5) or IELTS 6.0",
-"u": "https://www.comp.nus.edu.sg/programmes/pg/mcs/admissions/"
+"t": "Application & Deadlines",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcs/application/"
+},
+{
+"t": "Fees",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcs/scholarships/"
 }
 ]
 },
 {
 "id": "nus-mis",
 "name": "MComp, Information Systems specialisation",
-"url": "https://www.comp.nus.edu.sg/programmes/pg/mis/",
 "deg": "MComp",
 "deadlines": [
 {
@@ -1772,21 +2010,28 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Computing degree; e-commerce, engineering, economics, statistics or maths degrees also considered",
+"t": "Course Details",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mis/"
+},
+{
+"t": "Admission Requirements",
 "u": "https://www.comp.nus.edu.sg/programmes/pg/mis/admissions/"
 },
 {
-"t": "GRE 320 + AWA 3.5, GMAT 650, or GATE; TOEFL 90 (4.5) or IELTS 6.0",
-"u": "https://www.comp.nus.edu.sg/programmes/pg/mis/admissions/"
+"t": "Application & Deadlines",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mis/application/"
+},
+{
+"t": "Fees",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mis/scholarships/"
 }
 ]
 },
 {
 "id": "nus-misc",
 "name": "MComp, Infocomm Security specialisation",
-"url": "https://www.comp.nus.edu.sg/programmes/pg/misc/",
 "deg": "MComp",
 "deadlines": [
 {
@@ -1794,21 +2039,28 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Good honours degree in computing (or related degree with 2 years' IT experience)",
+"t": "Course Details",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/misc/"
+},
+{
+"t": "Admission Requirements",
 "u": "https://www.comp.nus.edu.sg/programmes/pg/misc/admissions/"
 },
 {
-"t": "GRE 320 + AWA 3.5, GMAT 650, or GATE; TOEFL 90 (4.5) or IELTS 6.0",
-"u": "https://www.comp.nus.edu.sg/programmes/pg/misc/admissions/"
+"t": "Application & Deadlines",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/misc/application/"
+},
+{
+"t": "Fees",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/misc/scholarships/"
 }
 ]
 },
 {
 "id": "nus-mcgen",
-"name": "MComp General Track (non-computing degree)",
-"url": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/",
+"name": "MComp General Track (for non-computing graduates)",
 "deg": "MComp",
 "deadlines": [
 {
@@ -1816,21 +2068,28 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Good honours degree in any discipline",
+"t": "Course Details",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/"
+},
+{
+"t": "Admission Requirements",
 "u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/admissions/"
 },
 {
-"t": "GRE 320 + AWA 3.5, GMAT 650, or GATE; TOEFL 90 (4.5) or IELTS 6.0",
-"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/admissions/"
+"t": "Application & Deadlines",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/application/"
+},
+{
+"t": "Fees",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/fees/"
 }
 ]
 },
 {
 "id": "nus-dsml",
 "name": "MSc Data Science & Machine Learning",
-"url": "https://www.math.nus.edu.sg/cdsml/ms-dsml/dsml-prospective-students/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1838,25 +2097,17 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Honours or 4-year bachelor's in maths, statistics, physics, engineering or computing",
-"u": "https://www.math.nus.edu.sg/cdsml/ms-dsml/dsml-prospective-students/"
-},
-{
-"t": "TOEFL 85 (4.5) or IELTS 6.0; GRE and referee reports not required",
-"u": "https://www.math.nus.edu.sg/cdsml/ms-dsml/dsml-prospective-students/"
-},
-{
-"t": "Bank statement of at least S$30,000 with the application",
+"t": "Course Details, Requirements & Fees",
 "u": "https://www.math.nus.edu.sg/cdsml/ms-dsml/dsml-prospective-students/"
 }
-]
+],
+"note": "The early round (16 May-15 Jul 2026) has closed. A bank statement of at least S$30,000 is needed with the application."
 },
 {
 "id": "nus-aii",
 "name": "MSc Artificial Intelligence & Innovation",
-"url": "https://scale.nus.edu.sg/programmes/graduate/msc-(artificial-intelligence-innovation)",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1864,21 +2115,17 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "Bachelor's, preferably 4-year honours (3-year needs 1 year of work experience)",
-"u": "https://scale.nus.edu.sg/programmes/graduate/msc-(artificial-intelligence-innovation)"
-},
-{
-"t": "TOEFL 85 (4.5) or IELTS 6.0",
+"t": "Course Details, Requirements & Fees",
 "u": "https://scale.nus.edu.sg/programmes/graduate/msc-(artificial-intelligence-innovation)"
 }
-]
+],
+"note": "Run by NUS SCALE; offers are made on a rolling basis."
 },
 {
 "id": "nus-dss",
 "name": "MSc Data Science for Sustainability",
-"url": "https://www.stat.nus.edu.sg/education/graduate/msc-in-data-science-for-sustainability/prospective-students/",
 "deg": "MSc",
 "deadlines": [
 {
@@ -1886,16 +2133,13 @@
 "d": "2027-01-31"
 }
 ],
-"req": [
+"links": [
 {
-"t": "4-year bachelor's in a quantitative subject (maths, engineering, statistics, CS, physics, economics)",
-"u": "https://www.stat.nus.edu.sg/education/graduate/msc-in-data-science-for-sustainability/prospective-students/"
-},
-{
-"t": "TOEFL 85 (4.5) or IELTS 6.0",
+"t": "Course Details, Requirements & Fees",
 "u": "https://www.stat.nus.edu.sg/education/graduate/msc-in-data-science-for-sustainability/prospective-students/"
 }
-]
+],
+"note": "The early round (16 May-15 Jul 2026) has closed."
 }
 ],
 "fees": {
@@ -1912,7 +2156,7 @@
 "Tuition, whole course (with GST)",
 "S$69,215",
 "S$76,409",
-"Not shown",
+"See course page",
 "S$58,860",
 "S$52,320"
 ],
@@ -1920,7 +2164,7 @@
 "Acceptance fee",
 "S$6,921.50",
 "S$7,640.90",
-"Not shown",
+"See course page",
 "S$6,540",
 "S$10,900"
 ],
@@ -1935,23 +2179,20 @@
 ],
 "links": [
 {
-"t": "MComp fees",
+"t": "MComp Fees",
 "u": "https://www.comp.nus.edu.sg/programmes/pg/mcs/scholarships/"
 },
 {
-"t": "AI & Innovation fees",
-"u": "https://scale.nus.edu.sg/programmes/graduate/msc-(artificial-intelligence-innovation)"
-},
-{
-"t": "DSS fees",
-"u": "https://www.stat.nus.edu.sg/education/graduate/msc-in-data-science-for-sustainability/prospective-students/"
+"t": "MComp General Fees",
+"u": "https://www.comp.nus.edu.sg/programmes/pg/mcomp-gen/fees/"
 }
 ],
-"foot": "MComp acceptance fee counts toward tuition. DSML's fee sheet would not open; check the Fees section on its page."
+"foot": "The MComp acceptance fee counts toward tuition. DSML's fee sheet would not open; its course page links to it."
 },
 "notes": [
-"NUS has one intake a year (August 2027). Regular applications for all listed courses close 31 Jan 2027.",
-"The old MComp AI Specialisation stopped taking students in 2025; apply to the Master of Computing in AI instead."
+"NUS has one intake a year (August 2027); the regular round for every course listed closes 31 Jan 2027.",
+"MComp tracks accept GATE scores in place of the GRE for Indian graduates.",
+"The old MComp AI Specialisation stopped admitting in January 2025; the Master of Computing in AI replaces it."
 ]
 }
 ]
