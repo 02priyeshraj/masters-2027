@@ -15,20 +15,6 @@
 "dsai": "1",
 "cs": "1"
 },
-"links": [
-{
-"t": "EECS Admission Process",
-"u": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/"
-},
-{
-"t": "EECS Admission FAQs",
-"u": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/"
-},
-{
-"t": "Graduate Tuition",
-"u": "https://registrar.mit.edu/registration-academics/tuition-fees/graduate"
-}
-],
 "courses": [
 {
 "id": "mit-eecs",
@@ -89,6 +75,38 @@
 "notes": [
 "MIT has no master's in CS, Data Science or AI open to outside applicants for 2027. EECS admits to the PhD only and awards the SM along the way.",
 "The EECS admissions page labels its 1 Dec 2026 deadline as for 'September 2026' entry; MIT's graduate office lists the deadline as 1 December, so treat it as the Fall 2027 deadline."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "EECS Application Portal",
+"u": "https://gradapply.mit.edu/eecs/apply/login/"
+},
+{
+"t": "Application Procedures",
+"u": "https://oge.mit.edu/graduate-admissions/applications/procedures/"
+},
+{
+"t": "International Applicants",
+"u": "https://oge.mit.edu/graduate-admissions/applications/international-applicants/"
+},
+{
+"t": "Application Fee Waivers",
+"u": "https://oge.mit.edu/graduate-admissions/applications/application-fee-waiver/"
+}
+]
+},
+{
+"cat": "Arrival",
+"items": [
+{
+"t": "Graduate Housing",
+"u": "https://oge.mit.edu/graduate-admissions/admitted-student-resources/housing/"
+}
+]
+}
 ]
 },
 {
@@ -102,20 +120,6 @@
 "dsai": "2",
 "cs": "2"
 },
-"links": [
-{
-"t": "Eligibility (International Degrees)",
-"u": "https://gradadmissions.stanford.edu/apply/eligibility"
-},
-{
-"t": "English & GRE Test Scores",
-"u": "https://gradadmissions.stanford.edu/apply/test-scores"
-},
-{
-"t": "2026-27 Tuition Rates",
-"u": "https://studentservices.stanford.edu/tuition-rates/2026-2027-graduate-and-professional-tuition-rates"
-}
-],
 "courses": [
 {
 "id": "stan-cs",
@@ -233,6 +237,51 @@
 "notes": [
 "Stanford allows only one graduate application per year, so choose one of CS, Statistics or ICME.",
 "Autumn 2027 entry only for outside applicants; the spring dates on these pages are for current Stanford students."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Apply Now (portal)",
+"u": "https://gradadmissions.stanford.edu/apply/apply-now"
+},
+{
+"t": "Application Overview",
+"u": "https://gradadmissions.stanford.edu/apply/application-overview"
+},
+{
+"t": "Statements",
+"u": "https://gradadmissions.stanford.edu/apply/statements"
+},
+{
+"t": "Recommendations",
+"u": "https://gradadmissions.stanford.edu/apply/recommendations"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "Eligibility (International Degrees)",
+"u": "https://gradadmissions.stanford.edu/apply/eligibility"
+},
+{
+"t": "English & GRE Test Scores",
+"u": "https://gradadmissions.stanford.edu/apply/test-scores"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "Bechtel International Center",
+"u": "https://bechtel.stanford.edu/"
+}
+]
+}
 ]
 },
 {
@@ -246,16 +295,6 @@
 "dsai": "8",
 "cs": "7"
 },
-"links": [
-{
-"t": "GSAS Application Instructions",
-"u": "https://gsas.harvard.edu/apply/applying-degree-programs"
-},
-{
-"t": "Cost of Attendance 2026-27",
-"u": "https://gsas.harvard.edu/apply/cost-attendance-2026-2027"
-}
-],
 "courses": [
 {
 "id": "harv-ds",
@@ -378,6 +417,43 @@
 "notes": [
 "SEAS master's students cannot get financial aid from SEAS; plan for loans, savings or outside scholarships.",
 "Fall entry only with one deadline (1 Dec 2026) and no late applications. Harvard accepts up to three applications to different programmes per year."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "GSAS Apply (portal)",
+"u": "https://gsas.harvard.edu/apply"
+},
+{
+"t": "Application Instructions",
+"u": "https://gsas.harvard.edu/apply/applying-degree-programs"
+},
+{
+"t": "Transcripts",
+"u": "https://gsas.harvard.edu/apply/applying-degree-programs/transcripts"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "English Proficiency",
+"u": "https://gsas.harvard.edu/apply/applying-degree-programs/english-proficiency"
+}
+]
+},
+{
+"cat": "Arrival",
+"items": [
+{
+"t": "Graduate Housing",
+"u": "https://gsas.harvard.edu/housing"
+}
+]
+}
 ]
 },
 {
@@ -392,20 +468,6 @@
 "dsai": "Not ranked",
 "cs": "40"
 },
-"links": [
-{
-"t": "Applicant FAQs",
-"u": "https://gradoffice.caltech.edu/admissions/faq-applicants"
-},
-{
-"t": "Deadlines by Programme (PDF)",
-"u": "https://gradoffice.caltech.edu/documents/35494/UPDATED_Application_Deadlines_2026-27.pdf"
-},
-{
-"t": "Estimated Budget",
-"u": "https://gradoffice.caltech.edu/financialsupport/budget"
-}
-],
 "courses": [
 {
 "id": "cal-cs",
@@ -459,6 +521,34 @@
 "notes": [
 "Caltech CS has no terminal master's; you would apply to the PhD.",
 "Caltech says more than 98% of admitted graduate students receive full tuition plus a stipend."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Application Requirements",
+"u": "https://gradoffice.caltech.edu/admissions/checklist"
+},
+{
+"t": "Applicant FAQs",
+"u": "https://gradoffice.caltech.edu/admissions/faq-applicants"
+},
+{
+"t": "Deadlines by Programme (PDF)",
+"u": "https://gradoffice.caltech.edu/documents/35494/UPDATED_Application_Deadlines_2026-27.pdf"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "International Student Programs",
+"u": "https://www.international.caltech.edu/"
+}
+]
+}
 ]
 },
 {
@@ -472,28 +562,6 @@
 "dsai": "=15",
 "cs": "12"
 },
-"links": [
-{
-"t": "Indian Qualifications",
-"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/entry-requirements/accepted-qualifications/#tabpanel_1278300"
-},
-{
-"t": "English Requirements (IELTS)",
-"u": "https://www.imperial.ac.uk/study/apply/english-language/#tabpanel_1236863"
-},
-{
-"t": "Application Rounds & Deadlines",
-"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/deadlines/"
-},
-{
-"t": "Personal Statement",
-"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/personal-statement/"
-},
-{
-"t": "Application Fee",
-"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/application-fee/"
-}
-],
 "courses": [
 {
 "id": "imp-advanced-computing",
@@ -975,6 +1043,67 @@
 "Apply by Round 2 (6 Jan 2027): Imperial says places and courses are not guaranteed in later rounds, and some courses close early.",
 "One application per year with up to two course choices; the second choice is only reviewed if the first is unsuccessful or waitlisted.",
 "References can arrive shortly after the round closes. Visa applicants are advised to apply by 18 June 2027 at the latest."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Application Portal (My Imperial)",
+"u": "https://myimperial.powerappsportals.com"
+},
+{
+"t": "Application Process",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/"
+},
+{
+"t": "Rounds & Deadlines",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/deadlines/"
+},
+{
+"t": "Personal Statement",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/application-process/personal-statement/"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "Indian Qualifications",
+"u": "https://www.imperial.ac.uk/study/apply/postgraduate-taught/entry-requirements/accepted-qualifications/#tabpanel_1278300"
+},
+{
+"t": "English Requirements (IELTS)",
+"u": "https://www.imperial.ac.uk/study/apply/english-language/#tabpanel_1236863"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "Student Visa",
+"u": "https://www.imperial.ac.uk/students/international-students/visas-and-immigration/student-route-visa/"
+},
+{
+"t": "Visa Financial Requirements",
+"u": "https://www.imperial.ac.uk/students/international-students/visas-and-immigration/financial-requirements/"
+},
+{
+"t": "CAS (Confirmation of Acceptance)",
+"u": "https://www.imperial.ac.uk/students/international-students/visas-and-immigration/confirmation-of-acceptance-for-studies-cas/"
+},
+{
+"t": "ATAS",
+"u": "https://www.imperial.ac.uk/students/international-students/visas-and-immigration/atas/"
+},
+{
+"t": "Accommodation",
+"u": "https://www.imperial.ac.uk/study/student-life/accommodation/"
+}
+]
+}
 ]
 },
 {
@@ -988,20 +1117,6 @@
 "dsai": "=6",
 "cs": "=4"
 },
-"links": [
-{
-"t": "Indian Qualifications",
-"u": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifications#i"
-},
-{
-"t": "English Language Proficiency",
-"u": "https://www.ox.ac.uk/admissions/graduate/application-guide/qualifications-experience-languages-funding/english-language-proficiency"
-},
-{
-"t": "Living Costs",
-"u": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/living-costs"
-}
-],
 "courses": [
 {
 "id": "ox-acs",
@@ -1127,6 +1242,51 @@
 },
 "notes": [
 "October 2027 start only. Oxford's part-time Software Engineering and Software & Systems Security MScs are left out because they don't lead to a student visa."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Application Portal",
+"u": "https://evision.ox.ac.uk/urd/sits.urd/run/siw_ipp_lgn.login?process=siw_ipp_app_crs"
+},
+{
+"t": "Application Guide",
+"u": "https://www.ox.ac.uk/admissions/graduate/application-guide"
+},
+{
+"t": "Supporting Documents",
+"u": "https://www.ox.ac.uk/admissions/graduate/application-guide/supporting-documents"
+},
+{
+"t": "References",
+"u": "https://www.ox.ac.uk/admissions/graduate/application-guide/references"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "Indian Qualifications",
+"u": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifications#i"
+},
+{
+"t": "English Language Proficiency",
+"u": "https://www.ox.ac.uk/admissions/graduate/application-guide/qualifications-experience-languages-funding/english-language-proficiency"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "Visas & Immigration",
+"u": "https://www.ox.ac.uk/admissions/graduate/international-applicants/visas-and-immigration"
+}
+]
+}
 ]
 },
 {
@@ -1140,24 +1300,6 @@
 "dsai": "9",
 "cs": "8"
 },
-"links": [
-{
-"t": "Indian Qualifications",
-"u": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications"
-},
-{
-"t": "English Language Requirements",
-"u": "https://www.postgraduate.study.cam.ac.uk/apply/before/english-language-requirements"
-},
-{
-"t": "References Guidance",
-"u": "https://www.postgraduate.study.cam.ac.uk/apply/how/references"
-},
-{
-"t": "Application Fee",
-"u": "https://www.postgraduate.study.cam.ac.uk/apply/how/application-fee"
-}
-],
 "courses": [
 {
 "id": "cam-acs",
@@ -1366,6 +1508,59 @@
 },
 "notes": [
 "Applying by the course funding deadline (8 Dec 2026; 6 Jan 2027 for Scientific Computing) is what puts you in the Cambridge scholarship competitions, including Gates Cambridge."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Applicant Portal",
+"u": "https://apply.postgraduate.study.cam.ac.uk/applicant/login"
+},
+{
+"t": "Supporting Documents",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/how/supporting-documents"
+},
+{
+"t": "International Applications",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/how/international-applications"
+},
+{
+"t": "All Application Deadlines",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/application-deadlines"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "Indian Qualifications",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications"
+},
+{
+"t": "English Language Requirements",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/before/english-language-requirements"
+},
+{
+"t": "References Guidance",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/how/references"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "Visas & Immigration",
+"u": "https://www.postgraduate.study.cam.ac.uk/apply/after/visas-immigration"
+},
+{
+"t": "Accommodation",
+"u": "https://www.postgraduate.study.cam.ac.uk/colleges/accommodation"
+}
+]
+}
 ]
 },
 {
@@ -1379,24 +1574,6 @@
 "dsai": "22",
 "cs": "20"
 },
-"links": [
-{
-"t": "English Language Requirements",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
-},
-{
-"t": "Selecting Your References",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/selecting-your-references"
-},
-{
-"t": "Application Fees",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/application-fees"
-},
-{
-"t": "Tuition Fees & Deposits",
-"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/funding-your-masters/tuition-fees"
-}
-],
 "courses": [
 {
 "id": "ucl-machine-learning-msc",
@@ -1754,6 +1931,55 @@
 "notes": [
 "You can apply to at most two UCL graduate courses per cycle.",
 "Computer Science department courses take no late applications; UCL advises visa and scholarship applicants to apply early."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Applying for Taught Master's",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/applying-graduate-taught-study-ucl"
+},
+{
+"t": "Applying as an International Student",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/applying-international-student"
+},
+{
+"t": "Personal Statement",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/writing-your-personal-statement"
+},
+{
+"t": "Academic Transcript",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/getting-your-academic-transcript"
+},
+{
+"t": "Selecting Your References",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/selecting-your-references"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "English Language Requirements",
+"u": "https://www.ucl.ac.uk/study/prospective-students/graduate/how-apply/english-language-requirements"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "Immigration & Visas",
+"u": "https://www.ucl.ac.uk/study/international/immigration-and-visas"
+},
+{
+"t": "Accommodation",
+"u": "https://www.ucl.ac.uk/study/accommodation"
+}
+]
+}
 ]
 },
 {
@@ -1767,28 +1993,6 @@
 "dsai": "11",
 "cs": "10"
 },
-"links": [
-{
-"t": "Minimum Grade (India)",
-"u": "https://ethz.ch/en/studies/master/application/international-bachelor/prerequisites/minimum-grade-requirements.html"
-},
-{
-"t": "Language Requirements",
-"u": "https://ethz.ch/en/studies/master/application/language-requirements.html"
-},
-{
-"t": "General Application Documents",
-"u": "https://ethz.ch/en/studies/master/application/international-bachelor/application-documents/general-documents.html"
-},
-{
-"t": "Application Dates",
-"u": "https://ethz.ch/en/studies/master/application/dates.html"
-},
-{
-"t": "Tuition Fees",
-"u": "https://ethz.ch/students/en/studies/financial/tuition-fees.html"
-}
-],
 "courses": [
 {
 "id": "eth-cs",
@@ -1927,6 +2131,59 @@
 "Bachelor's degrees from outside Switzerland can only apply in the 1-30 Nov 2026 window (11:59 AM CET). There is no spring entry, and late or incomplete files are not processed.",
 "ETH says applicants from India below the published minimum average have no prospect of success.",
 "The ETH Excellence Scholarship (ESOP) has to be applied for in this same November window."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Application Portal (eApply)",
+"u": "https://www.lehrbetrieb.ethz.ch/eApply/ealogin.view?lang=en"
+},
+{
+"t": "How to Apply",
+"u": "https://ethz.ch/en/studies/master/application/international-bachelor/how-to-apply.html"
+},
+{
+"t": "Application Dates",
+"u": "https://ethz.ch/en/studies/master/application/dates.html"
+},
+{
+"t": "General Application Documents",
+"u": "https://ethz.ch/en/studies/master/application/international-bachelor/application-documents/general-documents.html"
+}
+]
+},
+{
+"cat": "Requirements",
+"items": [
+{
+"t": "Minimum Grade (India)",
+"u": "https://ethz.ch/en/studies/master/application/international-bachelor/prerequisites/minimum-grade-requirements.html"
+},
+{
+"t": "Language Requirements",
+"u": "https://ethz.ch/en/studies/master/application/language-requirements.html"
+}
+]
+},
+{
+"cat": "Visa & Arrival",
+"items": [
+{
+"t": "Immigration to Switzerland",
+"u": "https://ethz.ch/en/studies/international/after-admission/immigration.html"
+},
+{
+"t": "Residence Permit",
+"u": "https://ethz.ch/en/studies/international/after-arrival/residence-permit.html"
+},
+{
+"t": "Accommodation",
+"u": "https://ethz.ch/en/studies/international/after-admission/accommodation.html"
+}
+]
+}
 ]
 },
 {
@@ -1940,7 +2197,6 @@
 "dsai": "3",
 "cs": "=4"
 },
-"links": [],
 "courses": [
 {
 "id": "nus-mcai",
@@ -2193,6 +2449,26 @@
 "NUS has one intake a year (August 2027); the regular round for every course listed closes 31 Jan 2027.",
 "MComp tracks accept GATE scores in place of the GRE for Indian graduates.",
 "The old MComp AI Specialisation stopped admitting in January 2025; the Master of Computing in AI replaces it."
+],
+"pages": [
+{
+"cat": "Apply",
+"items": [
+{
+"t": "Graduate Application Portal",
+"u": "https://gradapp.nus.edu.sg/apply"
+}
+]
+},
+{
+"cat": "Fees",
+"items": [
+{
+"t": "Miscellaneous Student Fees",
+"u": "https://www.nus.edu.sg/registrar/administrative-policies-procedures/graduate/graduate-fees"
+}
+]
+}
 ]
 }
 ]
